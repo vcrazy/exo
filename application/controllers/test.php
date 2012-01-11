@@ -76,11 +76,18 @@ class Test extends CI_Controller
 		$this->load->view('forma_view');
 	}
 
+<<<<<<< HEAD
 	public function git_test()
 	{
 		echo 2423543;
 	}
 
+=======
+        public function forgithub()
+        {
+           echo 'lhhfusdfudsgfdsgfhsdgfhsdg';
+        }
+>>>>>>> 9fa7e428580f6bb22aaec63c093bfa64f0b12cc2
 	public function captcha()
 	{
 		$this->load->helper('captcha');
