@@ -4,7 +4,54 @@ class Test extends CI_Controller
 {
 	public function index()
 	{
-		echo 3;
+		echo '<pre>';
+
+		$size = pow(2, 19); // 16 is just an example, could also be 15 or 17
+
+		$startTime = microtime(true);
+
+		$array = array();
+		for ($key = 0, $maxKey = $size - 1; $key <= $maxKey; ++$key) {
+			$array[$key] = 0;
+		}
+
+		$endTime = microtime(true);
+
+		echo 'Inserting ', $size, ' good elements took ', $endTime - $startTime, ' seconds', "\n";
+
+		$startTime = microtime(true);
+
+		$array = array();
+		for ($key = 0, $maxKey = $size - 1; $key <= $maxKey; $key++) {
+			$array[$key] = 0;
+		}
+
+		$endTime = microtime(true);
+
+		echo 'Inserting ', $size, ' good elements took ', $endTime - $startTime, ' seconds', "\n";
+
+		$startTime = microtime(true);
+
+		$array = array();
+		$key = 0;
+		$maxKey = $size - 1;
+		while($key <= $maxKey)
+		{
+			$array[$key] = 0;
+			$key++;
+		}
+
+		$endTime = microtime(true);
+
+		echo 'Inserting ', $size, ' good elements took ', $endTime - $startTime, ' seconds', "\n";
+
+		$startTime = microtime(true);
+		$key = 0;
+		$array = array_fill($key, $size - 1, 0);
+
+		$endTime = microtime(true);
+
+		echo 'Inserting ', $size, ' good elements took ', $endTime - $startTime, ' seconds', "\n";
 	}
 
 	public function forma()
@@ -27,6 +74,11 @@ class Test extends CI_Controller
 		}
 
 		$this->load->view('forma_view');
+	}
+
+	public function git_test()
+	{
+		echo 2423543;
 	}
 
 	public function captcha()
