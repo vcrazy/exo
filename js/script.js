@@ -20,6 +20,10 @@ $(document).ready(function(){
 	$('#test').click(function(){
 		window.location.href='/register/step1';
 	});
+        
+        $('#toregister').click(function(){
+           window.location.href='/register/step4';
+       })
 
 //	$('body').click(function(){
 //		if($(this).hasClass('black-bg')){
