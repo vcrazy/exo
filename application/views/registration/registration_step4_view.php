@@ -1,7 +1,9 @@
 <?php include ('registration_steps.php'); ?>
 <form action="/register/step4" method="post">
-     <input type="textarea" name="ckeditor" />
-     <input type="submit" value="Нова Страница" name="new" />
-     <input type="submit" value="Приключих" name="forward" />
+     Поща: <input type="text" name="email" /> <br/>
+     Парола: <input type="password" name="password" />   <br/>
+     Потвърди парола: <input type="password" name="conf_pass" /> <br/>
+     Домейн: <input type="text" name="domain" /> <br/>
+     <input type="submit" value="Продължи" />
 </form>
 
