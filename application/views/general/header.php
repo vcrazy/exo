@@ -6,9 +6,8 @@
 		<link href="/css/reset.css" rel="stylesheet" type="text/css" />
 		<link href="/css/style.css" rel="stylesheet" type="text/css" />
 		<link href="/css/exoHeader.css" rel="stylesheet" type="text/css" media="screen" />
-                <script src="/js/jquery.min.js" type="text/javascript"></script>
+		<script src="/js/jquery.min.js" type="text/javascript"></script>
 		<script src="/js/script.js" type="text/javascript"></script>
-                <script type="text/javascript" src="/js/ckeditor/ckeditor.js"></script>
-                
+		<script type="text/javascript" src="/js/ckeditor/ckeditor.js"></script>
 	</head>
 	<body>

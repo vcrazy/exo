@@ -1,9 +1,9 @@
 $(document).ready(function(){
-	$('#menu li').click(function(){
-		alert('wow menu click!');
-
-		return false;
-	});
+//	$('#menu li').click(function(){
+//		alert('wow menu click!');
+//
+//		return false;
+//	});
 
 	$('a.message').click(function(){
 		return confirm('Сериозно ли?');
@@ -32,11 +32,18 @@ $(document).ready(function(){
 //			$(this).addClass('black-bg');
 //		}
 //	});
+//
+//	$('body').append('<span id="pf" style="color: blue; border: 1px solid red;">a</span><div id="testdiv" style="width: 400px; height: 100px; background-color: red;">yrdy</div><div style="height: 200px;">dawwd</div>');
+//	$('span#pf').click(function(){
+////		$('#testdiv').animate({width: 'toggle', opacity: 'toggle'}, 2000);
+//		$('#testdiv').css('borderRadius', '50	px');
+//	});
 
-	$('body').append('<span id="pf" style="color: blue; border: 1px solid red;">a</span><div id="testdiv" style="width: 400px; height: 100px; background-color: red;">yrdy</div><div style="height: 200px;">dawwd</div>');
-	$('span#pf').click(function(){
-//		$('#testdiv').animate({width: 'toggle', opacity: 'toggle'}, 2000);
-		$('#testdiv').css('borderRadius', '50	px');
+	$('#menu li[id^=menu_]').click(function(){
+		$('.page').hide();
+		$('#page_' + $(this).attr('id')).show();
+
+		return false;
 	});
 });
 
