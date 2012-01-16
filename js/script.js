@@ -25,6 +25,7 @@ $(document).ready(function(){
            window.location.href='/register/step4';
        })
 
+       $('textarea').ckeditor();
 //	$('body').click(function(){
 //		if($(this).hasClass('black-bg')){
 //			$(this).removeClass('black-bg')
