@@ -1,2 +1,5 @@
 <?php include ('registration_steps.php'); ?>
-ТУК РОСКО ТРЯБВА ДА СИ СВЪРШИ РАБОТАТА ama ne e :P . :)
+<form action="/register/step1" method="post">
+    Избери темплейт : <input type="radio" name="template" value="Template1" /><br />
+                      <input type="submit" value="Изпрати" />
+</form>
