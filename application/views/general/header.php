@@ -6,6 +6,7 @@
 		<link href="/css/reset.css" rel="stylesheet" type="text/css" />
 		<link href="/css/style.css" rel="stylesheet" type="text/css" />
 		<link href="/css/exoHeader.css" rel="stylesheet" type="text/css" media="screen" />
+                <link href="/css/exoFooter.css" rel="stylesheet" type="text/css" media="screen" />
                 <script src="/js/jquery.js" type="text/javascript"></script>
 		<script src="/js/script.js" type="text/javascript"></script>
                 
@@ -22,9 +23,9 @@
         <h1 id="logo"><a href="exoindex3.html" rel="index" title="Web Design Company">Web Design Company</a> <span title="MASS MEDIA GROUP LTD"></span> </h1>
         <ul id="nav">
           <!-- Navigation Bar -->
-          <li id="Link-Home"><a href="exoindex2.html">Na4alo<span class="wrap-bg"><span><!-- --></span></span></a></li>
-          <li id="Link-Services"><a href="exoindex3.html">Vhod<span class="wrap-bg"><span><!-- --></span></span></a></li>
-          <li id="Link-Portfolio"><a href="exoindex3.html">Syzdai dizain<span class="wrap-bg"><span><!-- --></span></span></a></li>
+          <li id="Link-Home"><a class="button" href="exo.loc"><span>submit this shit</span></a></li>
+          <li id="Link-Services"><a class="button" href="http://google.com"><span>submit this shit</span></a></li>
+          <li id="Link-Portfolio"><a href="exoindex3.html"><span class="wrap-bg"><span><!-- --></span></span></a></li>
           
         </ul><div id="light" style="left: 10px; top: 0px; "></div>
 	  </div>
