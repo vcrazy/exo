@@ -64,6 +64,8 @@ $db['default']['swap_pre'] = '';
 $db['default']['autoinit'] = TRUE;
 $db['default']['stricton'] = FALSE;
 
+// mysql db remote connect - not working.. pass: VKDNw{FMd_Q%, user: t3stovet_exouser, db: t3stovet_exo
+
 
 /* End of file database.php */
 /* Location: ./application/config/database.php */

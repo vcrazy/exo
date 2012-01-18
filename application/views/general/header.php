@@ -6,12 +6,18 @@
 		<link href="/css/reset.css" rel="stylesheet" type="text/css" />
 		<link href="/css/style.css" rel="stylesheet" type="text/css" />
 		<link href="/css/exoHeader.css" rel="stylesheet" type="text/css" media="screen" />
+<<<<<<< HEAD
                 <link href="/css/exoFooter.css" rel="stylesheet" type="text/css" media="screen" />
                 <script src="/js/jquery.js" type="text/javascript"></script>
+=======
+                <script src="/js/jquery.min.js" type="text/javascript"></script>
+                <script type="text/javascript" src="/js/ckeditor/ckeditor.js"></script>
+                <script type="text/javascript" src="/js/ckeditor/adapters/jquery.js"></script>
+>>>>>>> 53de03876ce2fd219419eb6721d6af91a93a42f3
 		<script src="/js/script.js" type="text/javascript"></script>
-                
 	</head>
 	<body>
+<<<<<<< HEAD
 <div id="header-left">
   <!-- Header - left -->
   <div id="header-right">
@@ -38,3 +44,5 @@
 <!-- /Header - left -->
 
 		<?php include('menu.php'); ?>
+=======
+>>>>>>> 53de03876ce2fd219419eb6721d6af91a93a42f3

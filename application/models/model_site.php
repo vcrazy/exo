@@ -6,17 +6,53 @@ class Model_site extends CI_Model
 		parent::__construct();
 	}
 
-    public function insert_project($name)
+	public function read_website($website_id = NULL)
 	{
-		$name = $this->db->escape($name);
-		$user_id = $this->session->userdata('user_id');
+		if(is_null($website_id))
+		{
+			return FALSE;
+		}
 
-		$this->db->query("INSERT INTO projects (project_name, user_id) VALUES ($name, $user_id)");
-		$insert_id = $this->db->insert_id();
+		$this->db->where('site_id', $website_id);
+		$this->db->limit(1);
+		$query = $this->db->get('sites');
 
-		$this->db->query("INSERT INTO websites (project_id) VALUES ($insert_id)");
-		$insert_id = $this->db->insert_id();
+		if($query->num_rows() > 0)
+		{
+			return $query->row_array();
+		}
+		else
+		{
+			return FALSE;
+		}
+	}
 
-		return $insert_id;
+	public function read_pages($website_id = NULL)
+	{
+		if(is_null($website_id))
+		{
+			return FALSE;
+		}
+
+		$this->db->where('site_id', $website_id);
+		$this->db->order_by('page_num');
+
+		$query = $this->db->get('pages');
+
+		if($query->num_rows() > 0)
+		{
+			$arr = array();
+
+			foreach($query->result_array() as $row)
+			{
+				$arr[$row['page_num']] = $row;
+			}
+
+			return $arr;
+		}
+		else
+		{
+			return FALSE;
+		}
 	}
 }
