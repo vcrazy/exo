@@ -24,16 +24,25 @@
       <div id="header-content">
         <!-- header-content -->
         <h1 id="logo"><a href="exoindex3.html" rel="index" title="Web Design Company">Web Design Company</a> <span title="MASS MEDIA GROUP LTD"></span> </h1>
-        <ul id="nav">
+        
           <!-- Navigation Bar -->
           
-          <a class="button" href="http://google.com"><span>sdcbsd;</span></a>
-          <a class="button" href="http://google.com"><span>sdcbsd;</span></a>
-          <a class="button" href="http://google.com"><span>sdcasdasdasdasdasdasdbsd;</span></a>
-          <a class="button" href="http://google.com"><span>ssd;</span></a>
+          
+          
+          <div id="menu">
+
+	<ul>
+		<?php
+			foreach($menus as $menu)
+			{
+				echo '<a class="button"><span>' . $menu['menu_title'] . '</span></a>';
+			}
+		?>
+	</ul>
+</div>
 
           
-        </ul><div id="light" style="left: 10px; top: 0px; "></div>
+        <div id="light" style="left: 10px; top: 0px; "></div>
 	  </div>
       <!-- /header-content -->
     </div>
@@ -43,5 +52,5 @@
 </div>
 <!-- /Header - left -->
 
-		<?php include('menu.php'); ?>
+	
 

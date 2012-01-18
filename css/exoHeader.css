@@ -66,7 +66,7 @@ h1#logo span {
 
 a.button {
     /* Sliding right image */
-    background: transparent url('images2/exoButton_a2.png') no-repeat scroll top right; 
+    background: transparent url('/styleMaterials/exoButton_a2.png') no-repeat scroll top right; 
 display: block;
 float: right;
 height: 48px; /* CHANGE THIS VALUE ACCORDING TO IMAGE HEIGHT */
@@ -81,7 +81,7 @@ font-weight:bold;
 }
 a.button span {
 /* Background left image */ 
-background: transparent url('images2/exoButton_span2.png') no-repeat; 
+background: transparent url('/styleMaterials/exoButton_span2.png') no-repeat; 
 display: block;
 line-height: 38px; /* CHANGE THIS VALUE ACCORDING TO BUTTONG HEIGHT */
 padding: 5px 0 5px 18px;
