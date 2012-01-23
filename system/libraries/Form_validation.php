@@ -948,13 +948,13 @@ class CI_Form_validation {
 	 * @param	field
 	 * @return	bool
 	 */
-	public function is_unique($str, $field)
-	{
-		list($table, $field)=explode('.', $field);
-		$query = $this->CI->db->limit(1)->get_where($table, array($field => $str));
+	//public function is_unique($str, $field)
+	//{
+	//	list($table, $field)=explode('.', $field);
+	//	$query = $this->CI->db->limit(1)->get_where($table, array($field => $str));
 		
-		return $query->num_rows() === 0;
-    }
+	//	return $query->num_rows() === 0;
+   // }
 
 	// --------------------------------------------------------------------
 
@@ -1359,6 +1359,8 @@ class CI_Form_validation {
 	{
 		return $this->CI->security->xss_clean($str);
 	}
+        
+        
 
 	// --------------------------------------------------------------------
 
@@ -1373,6 +1375,20 @@ class CI_Form_validation {
 	{
 		return str_replace(array('<?php', '<?PHP', '<?', '?>'),  array('&lt;?php', '&lt;?PHP', '&lt;?', '?&gt;'), $str);
 	}
+        
+        public function is_unique($str, $field)
+        {
+            list($table, $field) = explode('.', $field);
+
+            if (isset($this->CI->db))
+            {
+                //$query = $this->CI->db->limit(1)->get_where($table, array($field => $str));
+                $query = $this->CI->db->where($field, $str)->get($table); // Removed limit
+                return $query->num_rows() === 0;
+            }
+
+            return FALSE;
+        }
 
 }
 // END Form Validation Class

@@ -8,12 +8,12 @@ class Register extends MY_Controller // extends our controller - see it in the '
             {
                 $this->data['view'] = 'registration/registration_step1_view'; // main view we will see in the middle of the page
 
-		$this->load_view(); // declared in MY_Controller - equivalent to $this->load->view('main_template_view');
+                $this->load->helper(array('form', 'url'));
+                $this->load->library('form_validation');
                 
                 if( !empty($_POST)  )
                     {
-                        $this->load->helper(array('form', 'url'));
-                        $this->load->library('form_validation');
+
                         $this->form_validation->set_rules('template', 'Template', 'required');
                         if ($this->form_validation->run() != FALSE)
                             {
@@ -26,18 +26,18 @@ class Register extends MY_Controller // extends our controller - see it in the '
                                 redirect('/../register/step2');
                             }
                     }
-                
+                $this->load_view();
             }
        	public function step2()
             {   
                 $this->data['view'] = 'registration/registration_step2_view'; // main view we will see in the middle of the page
 
-		$this->load_view(); // declared in MY_Controller - equivalent to $this->load->view('main_template_view');
-           
+                $this->load->helper(array('form', 'url'));
+                $this->load->library('form_validation');
+                
                  if( !empty($_POST)  )
                     {
-                        $this->load->helper(array('form', 'url'));
-                        $this->load->library('form_validation');
+
                         $this->form_validation->set_rules('ckeditor', 'Ckeditor', 'required');
                         $this->form_validation->set_rules('title', 'TitleMain', 'required');
                         if ($this->form_validation->run() != FALSE)
@@ -54,6 +54,7 @@ class Register extends MY_Controller // extends our controller - see it in the '
                                 redirect('/../register/step3');
                             }
                     }
+                    $this->load_view();
                }     
           public function step3()
                  {
@@ -61,14 +62,14 @@ class Register extends MY_Controller // extends our controller - see it in the '
                 
                 $this->data['view'] = 'registration/registration_step3_view'; // main view we will see in the middle of the page
 
-		$this->load_view();
+                $this->load->helper(array('form', 'url'));
+                $this->load->library('form_validation');
                 
                  if( !empty($_POST)  )
                     {
-                        $this->load->helper(array('form', 'url'));
-                        $this->load->library('form_validation');
                         $this->form_validation->set_rules('ckeditor', 'Ckeditor', 'required');
                         $this->form_validation->set_rules('title', 'Title', 'required');
+                        
                         if ($this->form_validation->run() != FALSE)
                             {
                     #            var_dump($this->session->userdata('nextpage'));
@@ -93,6 +94,7 @@ class Register extends MY_Controller // extends our controller - see it in the '
 //                                    redirect('/../register/step3');
                             }
                     }
+                    $this->load_view();
                  }
                  
         public function step4()
@@ -110,7 +112,7 @@ class Register extends MY_Controller // extends our controller - see it in the '
                         $this->form_validation->set_rules('email', 'Email', 'required|valid_emails|is_unique[users.email]');
                         $this->form_validation->set_rules('password', 'Password', 'required|matches[conf_pass]');
                         $this->form_validation->set_rules('conf_pass', 'Confirm Password', 'required');
-                        $this->form_validation->set_rules('domain', 'Domain', 'required');
+                        $this->form_validation->set_rules('domain', 'Domain', 'required|valid_domains|is_unique[users.domain]');
                         if ($this->form_validation->run() != FALSE)
                             {   
                                 $email=$_POST['email'];
@@ -124,10 +126,24 @@ class Register extends MY_Controller // extends our controller - see it in the '
                                 $this->session->set_userdata($arr);
                                  $this->load->model("Model_register");
                                  $this->Model_register->save_registration();
-                                redirect('/../register/step4');
+                                redirect('/../register/step5');
                                 
                             }
                     }
+                    $this->load_view();
+                 }
+                 
+         public function step5()
+                 {
+               # var_dump( $this->session->all_userdata());
+                
+                $this->data['view'] = 'registration/registration_step5_view'; // main view we will see in the middle of the page
+
+		
+                $this->load->helper(array('form', 'url'));
+                $this->load->library('form_validation');
+                
+               
                     $this->load_view();
                  }
 }
