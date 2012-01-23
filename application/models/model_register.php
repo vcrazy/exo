@@ -4,7 +4,8 @@ class Model_register extends CI_Model {
 
     public function save_registration() {
         $nextpage = $this->session->userdata('nextpage');
-        $homepage = $this->session->userdata('homepage'); 
+        $title = $this->session->userdata('title');
+      //  $homepage = $this->session->userdata('homepage'); 
         $template = $this->session->userdata('template'); 
         $email = $_POST['email'];
         $password = $_POST['password'];
@@ -29,6 +30,7 @@ class Model_register extends CI_Model {
         foreach ($nextpage as $page1) {
             $count++;
             $page = array(
+            'title'    => $this->db->escape($title[$count-1]),
             'page_num' => $this->db->escape($count),
             'page_content' => $this->db->escape($page1),
             'site_id' => $this->db->escape($site_id),

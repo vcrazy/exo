@@ -39,11 +39,15 @@ class Register extends MY_Controller // extends our controller - see it in the '
                         $this->load->helper(array('form', 'url'));
                         $this->load->library('form_validation');
                         $this->form_validation->set_rules('ckeditor', 'Ckeditor', 'required');
+                        $this->form_validation->set_rules('title', 'TitleMain', 'required');
                         if ($this->form_validation->run() != FALSE)
                             {
-                                $homepage=$_POST['ckeditor'];
+                                
+                                $nextpage=array($_POST['ckeditor']);
+                                $title=array($_POST['title']);
                                 $arr= array(
-                                        'homepage' => $homepage
+                                        'nextpage' => $nextpage,
+                                        'title' => $title
                                            );
                                 $this->session->set_userdata($arr);
                                 
@@ -53,7 +57,7 @@ class Register extends MY_Controller // extends our controller - see it in the '
                }     
           public function step3()
                  {
-                var_dump( $this->session->all_userdata());
+                #var_dump( $this->session->all_userdata());
                 
                 $this->data['view'] = 'registration/registration_step3_view'; // main view we will see in the middle of the page
 
@@ -64,20 +68,25 @@ class Register extends MY_Controller // extends our controller - see it in the '
                         $this->load->helper(array('form', 'url'));
                         $this->load->library('form_validation');
                         $this->form_validation->set_rules('ckeditor', 'Ckeditor', 'required');
+                        $this->form_validation->set_rules('title', 'Title', 'required');
                         if ($this->form_validation->run() != FALSE)
                             {
-                                var_dump($this->session->userdata('nextpage'));
-                               if ( !$this->session->userdata('nextpage') )
+                    #            var_dump($this->session->userdata('nextpage'));
+                               if ( (!$this->session->userdata('nextpage')) OR (!$this->session->userdata('title')) )
                                 {
                                     $nextpage=array();
+                                    $title=array();
                                 }
                                 else
                                 {
                                     $nextpage = $this->session->userdata('nextpage');
+                                    $title = $this->session->userdata('title');
                                 }
                                     $nextpage[]=$_POST['ckeditor'];
+                                    $title[]=$_POST['title'];
                                     $arr= array(
-                                                'nextpage' => $nextpage
+                                                'nextpage' => $nextpage,
+                                                'title' => $title
                                                );
                                     $this->session->set_userdata($arr);
                                
@@ -88,7 +97,7 @@ class Register extends MY_Controller // extends our controller - see it in the '
                  
         public function step4()
                  {
-                var_dump( $this->session->all_userdata());
+               # var_dump( $this->session->all_userdata());
                 
                 $this->data['view'] = 'registration/registration_step4_view'; // main view we will see in the middle of the page
 
