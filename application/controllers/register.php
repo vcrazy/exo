@@ -92,18 +92,18 @@ class Register extends MY_Controller // extends our controller - see it in the '
                 
                 $this->data['view'] = 'registration/registration_step4_view'; // main view we will see in the middle of the page
 
-		$this->load_view();
+		
+                $this->load->helper(array('form', 'url'));
+                $this->load->library('form_validation');
                 
                  if( !empty($_POST)  )
                     {
-                        $this->load->helper(array('form', 'url'));
-                        $this->load->library('form_validation');
                         $this->form_validation->set_rules('email', 'Email', 'required|valid_emails|is_unique[users.email]');
                         $this->form_validation->set_rules('password', 'Password', 'required|matches[conf_pass]');
                         $this->form_validation->set_rules('conf_pass', 'Confirm Password', 'required');
                         $this->form_validation->set_rules('domain', 'Domain', 'required');
                         if ($this->form_validation->run() != FALSE)
-                            {
+                            {   
                                 $email=$_POST['email'];
                                 $password=$_POST['password'];
                                 $domain=$_POST['domain'];
@@ -119,5 +119,6 @@ class Register extends MY_Controller // extends our controller - see it in the '
                                 
                             }
                     }
+                    $this->load_view();
                  }
 }

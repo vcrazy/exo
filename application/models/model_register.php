@@ -38,7 +38,7 @@ class Model_register extends CI_Model {
             $this->db->insert('pages', $page);
         }
 
-		// return?
+	 return true;
     }
 
 }
