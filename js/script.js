@@ -25,7 +25,49 @@ $(document).ready(function(){
            window.location.href='/register/step4';
        })
 
-       $('textarea').ckeditor();
+       $('#ckeditor').ckeditor();
+       
+       $("#pagescont").validate({
+		rules: {
+			title: "required"
+                     //   ckeditor: "required"
+            },
+		messages: {
+			title: "Please enter your title"
+                     //   ckeditor : "Please fill the page content"
+		}
+	});
+       $("#signupform").validate({
+		rules: {
+			domain: "required",
+			password: {
+				required: true,
+				minlength: 5
+			},
+			conf_pass: {
+				required: true,
+				minlength: 5,
+				equalTo: "#password"
+			},
+			email: {
+				required: true,
+				email: true
+                        }
+		},
+		messages: {
+			domain: "Please enter your domain",
+			password: {
+				required: "Please provide a password",
+				minlength: "Your password must be at least 5 characters long"
+			},
+			conf_pass: {
+				required: "Please provide a password",
+				minlength: "Your password must be at least 5 characters long",
+				equalTo: "Please enter the same password as above"
+			},
+			email: "Please enter a valid email address"
+		}
+	});
 //	$('body').click(function(){
 //		if($(this).hasClass('black-bg')){
 //			$(this).removeClass('black-bg')
@@ -47,6 +89,7 @@ $(document).ready(function(){
 		return false;
 	});
 });
+
 
 //var neshto = document.getElementById('testid');
 //var neshtodve = document.getElementsByName('elementname');

@@ -1,7 +1,16 @@
-#content {background-color: lightgrey; padding: 20px;}
+#content {background-color: lightgrey; padding: 20px; width:1000px; margin:0 auto;}
 a, a:visited {color: blue; font-weight: bold;}
 a:hover {color: red;}
 
 .black-bg {background-color: black;}
 
 .hidden {display: none;}
+#signupForm #pagescont label.error {
+	margin-left: 10px;
+	width: auto;
+	display: inline;
+}
+.error{
+    color:red;   
+}
+
