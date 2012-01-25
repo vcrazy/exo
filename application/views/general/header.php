@@ -28,22 +28,9 @@
         
           <!-- Navigation Bar -->
           
-          
-          
-          <div id="menu">
-
-	<ul>
-		<?php
-			foreach($menus as $menu)
-			{
-				echo '<a class="button"><span>' . $menu['menu_title'] . '</span></a>';
-			}
-		?>
-	</ul>
-</div>
-
-          
-        <div id="light" style="left: 10px; top: 0px; "></div>
+          <?php include('menu.php'); ?>
+                    
+        
 	  </div>
       <!-- /header-content -->
     </div>

@@ -1,4 +1,12 @@
-<form action="/">
-	<input type="button" value="TEST" id="test" />
-	<input type="submit" />
-</form>
+<div id="menu">
+
+	<ul>
+		<?php
+			foreach($menus as $menu)
+			{
+				echo '<a class="button color ">' . $menu['menu_title'] . '</a>';
+			}
+		?>
+	</ul>
+</div>
+

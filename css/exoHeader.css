@@ -54,40 +54,61 @@ h1#logo span {
 	text-indent: -9999px;
 	position: relative;
 }
-#light {
-	position: absolute;
-	top: 0;
-	left: 19px;
-	width: 179px;
-	height: 230px;
-	background: url(/styleMaterials/nav-light.png) no-repeat 0 0px;
-	top:-180px;
+
+
+.button {
+   	display: inline-block;
+	zoom: 1; /* zoom and *display = ie7 hack for display:inline-block */
+	display: inline;
+	vertical-align: baseline;
+	margin: 0 2px;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	font: 14px/100% Arial, Helvetica, sans-serif;
+	padding: .5em 2em .55em;
+	text-shadow: 0 1px 1px rgba(0,0,0,.3);
+	-webkit-border-radius: .5em; 
+	-moz-border-radius: .5em;
+	border-radius: .5em;
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	box-shadow: 0 1px 2px rgba(0,0,0,.2);
+}
+.button:hover {
+	text-decoration: none;
+}
+.button:active {
+	position: relative;
+	top: 1px;
 }
 
-a.button {
-    /* Sliding right image */
-    background: transparent url('/styleMaterials/exoButton_a2.png') no-repeat scroll top right; 
-display: block;
-float: right;
-height: 48px; /* CHANGE THIS VALUE ACCORDING TO IMAGE HEIGHT */
-margin-right: 6px;
-padding-right: 16px; /* CHENGE THIS VALUE ACCORDING TO RIGHT IMAGE WIDTH */
-/* FONT PROPERTIES */
-text-decoration: none;
-color: #ffffff;
-font-family: Arial, Helvetica, sans-serif;
-font-size:12px;
-font-weight:bold;
+a.button:link {color: #ffffff;} /* unvisited link */ 
+a.button:visited {color:#ffffff;}  /* visited link */
+a.button:hover {color:#ffffff;}  /* mouse over link */
+a.button:active {color:#ffffff;}  /* selected link */
+
+
+.color {
+        color: #d7d7d7;
+	border: solid 1px #333;
+	background: #333;
+	background: -webkit-gradient(linear, left top, left bottom, from(#2d2b47), to(#000000));
+	background: -moz-linear-gradient(top,  #666,  #000);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#666666', endColorstr='#000000');
 }
-a.button span {
-/* Background left image */ 
-background: transparent url('/styleMaterials/exoButton_span2.png') no-repeat; 
-display: block;
-line-height: 38px; /* CHANGE THIS VALUE ACCORDING TO BUTTONG HEIGHT */
-padding: 5px 0 5px 18px;
-} 
-a.button:hover span{
-text-decoration:underline;
+.color:hover {
+	background: #000;
+	background: -webkit-gradient(linear, left top, left bottom, from(#000000), to(#2d2b47));
+	background: -moz-linear-gradient(top,  #444,  #000);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#444444', endColorstr='#000000');
+}
+.color:active {
+	color: #666;
+	background: -webkit-gradient(linear, left top, left bottom, from(#000), to(#444));
+	background: -moz-linear-gradient(top,  #000,  #444);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#666666');
 }
 
 
