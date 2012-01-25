@@ -104,4 +104,61 @@ class Test extends CI_Controller
 
 		echo $cap['image'];
 	}
+
+	public function prosti_neshta()
+	{
+		$vcrazy = 4;
+		$дмоианфавионфав = 5;
+		$arr = array();
+
+		$arr[0] = 2;
+		$arr[1] = 3;
+
+		$arr = array(0 => 1,2,3,'element',4,5,43543,5,433,4, 20 => 'te1111');
+
+		for($i = 0; $i < 20; $i++)
+		{
+			$arr[$i] = $i;
+		}
+		ksort($arr);
+
+		foreach($arr as $array_key => $array_val)
+		{
+			echo $array_key . ' - ' . $array_val . '<br />';
+		}
+
+		return;
+
+		array_push($arr, 'fer');
+
+		$arr = array(); // creates array
+		$arr[] = 'test'; // adds element to the back
+
+		array_unshift($arr, 'treste');
+
+		var_dump($arr);
+
+		echo 'ok';
+	}
+
+	public function page_load()
+	{
+		$time = microtime(); 
+		$time = explode(" ", $time); 
+		$time = $time[1] + $time[0]; 
+		$start = $time; 
+	
+	
+		
+		$a = array_fill(0, 1000000, 0);
+		
+		
+		
+		$time = microtime(); 
+		$time = explode(" ", $time); 
+		$time = $time[1] + $time[0]; 
+		$finish = $time; 
+		$totaltime = ($finish - $start); 
+		printf ("This page took %f seconds to load.", $totaltime); 
+	}
 }
