@@ -1,4 +1,4 @@
-#content {background-color: lightgrey; padding: 20px;}
+#content {background-color: lightgrey; padding: 20px; width:1000px; margin:0 auto;}
 a, a:visited {color: blue; font-weight: bold;}
 a:hover {color: red;}
 
