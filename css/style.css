@@ -5,3 +5,12 @@ a:hover {color: red;}
 .black-bg {background-color: black;}
 
 .hidden {display: none;}
+#signupForm #pagescont label.error {
+	margin-left: 10px;
+	width: auto;
+	display: inline;
+}
+.error{
+    color:red;   
+}
+
