@@ -48,10 +48,15 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'root';
-$db['default']['password'] = '';
-$db['default']['database'] = 'exodb';
+$db['default']['hostname'] = 'vega.rdb.superhosting.bg';
+$db['default']['username'] = 't3stovet_exouser';
+$db['default']['password'] = 'VKDNw{FMd_Q%';
+$db['default']['database'] = 't3stovet_exo';
+
+//$db['default']['hostname'] = 'localhost';
+//$db['default']['username'] = 'root';
+//$db['default']['password'] = '';
+//$db['default']['database'] = 'exodb';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
