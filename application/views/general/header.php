@@ -16,6 +16,7 @@
 		<script src="/js/script.js" type="text/javascript"></script>
 	</head>
 	<body>
+
 <div id="header-left">
   <!-- Header - left -->
   <div id="header-right">

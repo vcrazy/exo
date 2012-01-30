@@ -2,9 +2,9 @@
 
 	<ul>
 		<?php
-			foreach($menus as $menu)
+			foreach($menus as  $menu_id => $menu)
 			{
-				echo '<a class="button color ">' . $menu['menu_title'] . '</a>';
+				echo '<li id="menu_' . $menu_id . '" class="button color">' . $menu . '</li>';
 			}
 		?>
 	</ul>
