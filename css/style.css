@@ -1,4 +1,11 @@
-#content {background-color: lightgrey; padding: 20px; width:1000px; margin:0 auto;}
+#body-container {
+background-image: -ms-linear-gradient(right, #0B0E10 0%, #424756 25%, #8AAAC1 50%, #424756 75%, #0B0E10 100%);
+background-image: -moz-linear-gradient(right, #0B0E10 0%, #424756 25%, #8AAAC1 50%, #424756 75%, #0B0E10 100%);
+background-image: -o-linear-gradient(right, #0B0E10 0%, #424756 25%, #8AAAC1 50%, #424756 75%, #0B0E10 100%);
+background-image: -webkit-gradient(linear, right top, left top, color-stop(0, #0B0E10), color-stop(0.25, #424756), color-stop(0.5, #8AAAC1), color-stop(0.75, #424756), color-stop(1, #0B0E10));
+background-image: -webkit-linear-gradient(right, #0B0E10 0%, #424756 30%, #8AAAC1 50%, #424756 71%, #0B0E10 100%);
+height: 2000px;}
+/*#content {background-color: lightgray; padding: 20px; width:1000px; margin:0 auto;}
 a, a:visited {color: blue; font-weight: bold;}
 a:hover {color: red;}
 
@@ -13,4 +20,4 @@ a:hover {color: red;}
 .error{
     color:red;   
 }
-
+*/

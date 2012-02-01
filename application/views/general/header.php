@@ -6,8 +6,9 @@
 		<link href="/css/reset.css" rel="stylesheet" type="text/css" />
 		<link href="/css/style.css" rel="stylesheet" type="text/css" />
 		<link href="/css/exoHeader.css" rel="stylesheet" type="text/css" media="screen" />
-
+<!--                <link href="/css/exoHomepage.css" rel="/stylesheet" type="text/css" media="screen" />-->
                 <link href="/css/exoFooter.css" rel="stylesheet" type="text/css" media="screen" />
+                
                 <script src="/js/jquery.js" type="text/javascript"></script>
                 <script src="/js/jquery.min.js" type="text/javascript"></script>
                 <script src="/js/jquery.validate.min.js" type="text/javascript"></script>

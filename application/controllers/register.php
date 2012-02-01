@@ -47,7 +47,8 @@ class Register extends MY_Controller // extends our controller - see it in the '
                                 $title=array($_POST['title']);
                                 $arr= array(
                                         'nextpage' => $nextpage,
-                                        'title' => $title
+                                        'title' => $title,
+                                        'homepage'=>'yes'
                                            );
                                 $this->session->set_userdata('nextpage',$nextpage);
                                 $this->session->set_userdata('title',$title);
@@ -78,17 +79,20 @@ class Register extends MY_Controller // extends our controller - see it in the '
                                 {
                                     $nextpage=array();
                                     $title=array();
+                                    $homepage='';
                                 }
                                 else
                                 {
                                     $nextpage = $this->session->userdata('nextpage');
                                     $title = $this->session->userdata('title');
+                                    $homepage= $this->session->userdata('homepage');
                                 }
                                     $nextpage[]=$_POST['ckeditor'];
                                     $title[]=$_POST['title'];
                                     $arr= array(
                                                 'nextpage' => $nextpage,
-                                                'title' => $title
+                                                'title' => $title,
+                                                'homepage' => $homapage
                                                );
                                     $this->session->set_userdata('nextpage',$nextpage);
                                     $this->session->set_userdata('title',$title);
