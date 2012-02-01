@@ -1,6 +1,7 @@
 <form action="/admin/create_menu" method="post">
 Title:  <input type="text" name="title" />
 Number: <input type="text" name="number" />
+Link: <input type="text" name="link" />
 	<input type="submit" value="Създай" />
 </form>
 

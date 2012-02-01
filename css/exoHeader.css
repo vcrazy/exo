@@ -51,12 +51,13 @@ h1#logo span {
 	display: block;
 	width: 129px;
 	height: 38px;
-	text-indent: -9999px;
-	position: relative;
+	text-align: center;
+	font-size: 21px;
+	color: white;
+	line-height: 38px;
 }
 
-
-.button {
+.button1 {
    	display: inline-block;
 	zoom: 1; /* zoom and *display = ie7 hack for display:inline-block */
 	display: inline;
@@ -76,18 +77,18 @@ h1#logo span {
 	-moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
 	box-shadow: 0 1px 2px rgba(0,0,0,.2);
 }
-.button:hover {
+.button1:hover {
 	text-decoration: none;
 }
-.button:active {
+.button1:active {
 	position: relative;
 	top: 1px;
 }
 
-a.button:link {color: #ffffff;} /* unvisited link */ 
-a.button:visited {color:#ffffff;}  /* visited link */
-a.button:hover {color:#ffffff;}  /* mouse over link */
-a.button:active {color:#ffffff;}  /* selected link */
+a.button1:link {color: #ffffff;} /* unvisited link */ 
+a.button1:visited {color:#ffffff;}  /* visited link */
+a.button1:hover {color:#ffffff;}  /* mouse over link */
+a.button1:active {color:#ffffff;}  /* selected link */
 
 
 .color {
@@ -147,5 +148,3 @@ a.button:active {color:#ffffff;}  /* selected link */
 	top: 20px;
 }
 /* ----- /Header ----- */
-
-
