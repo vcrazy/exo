@@ -30,4 +30,10 @@ class Admin extends MY_Controller // extends our controller - see it in the 'cor
 		$this->load->helper('url');
 		redirect('/admin/create_menu');
 	}
+        public function show_admin()
+        {
+            $this->data['view'] = 'admin/main_view'; // main view we will see in the middle of the page
+
+            $this->load_view(); // declared in MY_Controller - equivalent to $this->load->view('main_template_view');
+        }
 }

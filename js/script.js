@@ -19,6 +19,7 @@ $(document).ready(function(){
                      //   ckeditor : "Please fill the page content"
 		}
 	});
+        
        $("#signupform").validate({
 		rules: {
 			domain: "required",
@@ -34,7 +35,7 @@ $(document).ready(function(){
 			email: {
 				required: true,
 				email: true
-                        }
+                        }  
 		},
 		messages: {
 			domain: "Please enter your domain",
@@ -47,7 +48,9 @@ $(document).ready(function(){
 				minlength: "Your password must be at least 5 characters long",
 				equalTo: "Please enter the same password as above"
 			},
-			email: "Please enter a valid email address"
+			email: {
+                            required:"Please enter a valid email address"
+                        }
 		}
 	});
 

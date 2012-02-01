@@ -7,7 +7,7 @@ class Model_register extends CI_Model {
         $title = $this->session->userdata('title');
       //  $homepage = $this->session->userdata('homepage'); 
         $template = $this->session->userdata('template'); 
-        $email = $_POST['email'];
+        $email = $_POST['email']; #$this->input->post('email');
         $password = $_POST['password'];
         $domain = $_POST['domain'];
 
@@ -42,7 +42,6 @@ class Model_register extends CI_Model {
 
 	 return true;
     }
-
 }
 
 ?>

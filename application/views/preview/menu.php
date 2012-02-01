@@ -1,10 +1,10 @@
 <div id="menu">
-	PERSONAL MENU
+
 	<ul>
 		<?php
-			foreach($menus as $menu_id => $menu_title)
+			foreach($menus as $menu)
 			{
-				echo '<li id="menu_' . $menu_id . '">' . $menu_title . '</li>';
+				echo '<a class="button color ">' . $menu['menu_title'] . '</a>';
 			}
 		?>
 	</ul>
