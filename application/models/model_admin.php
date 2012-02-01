@@ -11,6 +11,7 @@ class Model_admin extends CI_Model{
 
 		$this->db->insert('menus', $data); 
 	}
+
 	public function get_menus ()
 	{
 		$this->db->select('menu_title, menu_id');
@@ -21,15 +22,16 @@ class Model_admin extends CI_Model{
 		$arr = array();
 		foreach ($query->result_array() as $row)
 		{
-			$arr[] = $row;
+			$arr[] = $row['menu_title'];
 		}
 		return $arr;
 	}
-       public function delete_menu ($number)
-        {       
-                $this->db->where('menu_id', $number);
-				$this->db->delete('menus');
-        }
+
+	public function delete_menu ($number)
+	{       
+			$this->db->where('menu_id', $number);
+			$this->db->delete('menus');
+	}
 }
 
 ?>
