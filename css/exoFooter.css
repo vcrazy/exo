@@ -5,7 +5,7 @@
 	overflow: hidden;
 }
 #footer-left {
-	background: url(/styleMaterials/footercenter.jpg) no-repeat center top;
+	background-image: -webkit-radial-gradient(center bottom, circle farthest-corner, #171c20 0%, #000000 100%);
 }
 #footer {
 	margin: 0 auto;
