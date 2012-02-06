@@ -32,8 +32,22 @@ class Admin extends MY_Controller // extends our controller - see it in the 'cor
 	}
         public function show_admin()
         {
-            $this->data['view'] = 'admin/main_view'; // main view we will see in the middle of the page
-
-            $this->load_view(); // declared in MY_Controller - equivalent to $this->load->view('main_template_view');
+            $this->data['email']=$this->session->userdata('email');
+            $this->data['priority']=$this->session->userdata('priority');
+//            if ( $this->data['priority'] == 2 )
+//            {
+                $this->data['view'] = 'admin/main_view';
+                $this->load_view();
+//            } 
+//            else
+//            {
+//                $this->data['view'] = 'admin/error_admin';
+//                $this->load_view();
+//            }
         }
+       public function user_correction()
+       {
+           $this->data['view']='admin/user_correction';
+           $this->load_view();
+       }
 }

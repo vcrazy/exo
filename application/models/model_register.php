@@ -6,7 +6,8 @@ class Model_register extends CI_Model {
         $nextpage = $this->session->userdata('nextpage');
         $title = $this->session->userdata('title');
       //  $homepage = $this->session->userdata('homepage'); 
-        $template = $this->session->userdata('template'); 
+        $template = $this->session->userdata('template');
+        $priority = $this->session->userdata('priority');
         $email = $_POST['email']; #$this->input->post('email');
         $password = $_POST['password'];
         $domain = $_POST['domain'];
@@ -22,6 +23,7 @@ class Model_register extends CI_Model {
             'site_name' => $domain, 
             'user_id' => $user_id,
             'site_url' => $domain,
+            'priority' => $priority,
             'template_id' => $template
         );
         $this->db->insert('sites', $site);

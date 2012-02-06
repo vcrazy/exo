@@ -123,7 +123,8 @@ class Register extends MY_Controller // extends our controller - see it in the '
                                 $arr= array(
                                     'email'    => $email, 
                                     'password' => $password,
-                                    'domain'   => $domain
+                                    'domain'   => $domain,
+                                    'priority' =>'1'
                                            );
                                 $this->session->set_userdata($arr);
                                 $this->load->model("Model_register");
