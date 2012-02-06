@@ -1,3 +1,4 @@
+
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 /*
 | -------------------------------------------------------------------
@@ -48,10 +49,12 @@
 $active_group = 'default';
 $active_record = TRUE;
 
+// original server
 $db['default']['hostname'] = 'vega.rdb.superhosting.bg';
 $db['default']['username'] = 't3stovet_exouser';
 $db['default']['password'] = 'VKDNw{FMd_Q%';
 $db['default']['database'] = 't3stovet_exo';
+
 
 //$db['default']['hostname'] = 'localhost';
 //$db['default']['username'] = 'root';

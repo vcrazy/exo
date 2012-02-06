@@ -65,6 +65,6 @@ $(document).ready(function(){
 		$('.page').hide();
 		$('#page_' + $(this).attr('id')).show();
 
-		return false;
+		return true;
 	});
 });
