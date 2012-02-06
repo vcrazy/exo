@@ -17,7 +17,9 @@ class MY_Controller extends CI_Controller
 
 		$this->load->model('Model_admin');
 		$all_menus = $this->Model_admin->get_menus();
-		$this->data['menus'] = $all_menus; // Stefi has the job to make the menus work with the DB!
+		$this->data['menus'] = $all_menus; 
+		$all_footers = $this->Model_admin->get_footer();
+		$this->data['footer_links'] = $all_footers;
 	}
 
 	protected function load_view($view_name = 'main_template_view')
