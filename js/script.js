@@ -1,4 +1,17 @@
 $(document).ready(function(){
+	// select chosen menu if direct link
+	var hash = document.location.hash;
+
+	if(hash){
+		$.each($('#menu li[id^=menu_]'), function(){
+			if(hash === $(this).find('a').attr('href')){
+				$('div.page').hide();
+				$('div#page_' + $(this).attr('id')).show();
+			}
+		});
+	}
+	// end of select chosen menu if direct link
+
 	$('#test').click(function(){
 		window.location.href='/register/step1';
 	});
