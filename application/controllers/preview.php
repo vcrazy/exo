@@ -23,11 +23,12 @@ class Preview extends CI_Controller
 		if($this->data['pages'])
 		{
 			$this->data['menus'] = array();
+			$this->load->library('Helper');
 
 			foreach($this->data['pages'] as $page_num => $page)
 			{
 				$this->data['menus'][$page_num]['menu_title'] = $page['title'];
-				$this->data['menus'][$page_num]['menu_link'] = '#';
+				$this->data['menus'][$page_num]['menu_link'] = '#' . Helper::cyr2lat($page['title']);;
 			}
 		}
 		else
