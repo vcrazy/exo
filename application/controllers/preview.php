@@ -26,7 +26,8 @@ class Preview extends CI_Controller
 
 			foreach($this->data['pages'] as $page_num => $page)
 			{
-				$this->data['menus'][$page_num] = $page['title'];
+				$this->data['menus'][$page_num]['menu_title'] = $page['title'];
+				$this->data['menus'][$page_num]['menu_link'] = '#';
 			}
 		}
 		else

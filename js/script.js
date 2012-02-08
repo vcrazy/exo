@@ -21,15 +21,9 @@ $(document).ready(function(){
 	});
        $("#signupform").validate({
 		rules: {
-			domain: "required",
 			password: {
 				required: true,
 				minlength: 5
-			},
-			conf_pass: {
-				required: true,
-				minlength: 5,
-				equalTo: "#password"
 			},
 			email: {
 				required: true,
@@ -37,15 +31,31 @@ $(document).ready(function(){
                         }
 		},
 		messages: {
-			domain: "Please enter your domain",
 			password: {
 				required: "Please provide a password",
 				minlength: "Your password must be at least 5 characters long"
 			},
-			conf_pass: {
-				required: "Please provide a password",
-				minlength: "Your password must be at least 5 characters long",
-				equalTo: "Please enter the same password as above"
+			email: "Please enter a valid email address"
+		}
+	});
+	
+	$("#contactform").validate({
+		rules: {
+			name: "required",
+			message: {
+				required: true,
+				minlength: 5
+			},
+			email: {
+				required: true,
+				email: true
+                        }
+		},
+		messages: {
+			name: "Please enter your name",
+			message: {
+				required: "Please enter some text",
+				minlength: "Your message must be at least 5 characters long"
 			},
 			email: "Please enter a valid email address"
 		}
