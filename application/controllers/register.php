@@ -93,7 +93,7 @@ class Register extends MY_Controller // extends our controller - see it in the '
                                     $this->session->set_userdata('nextpage',$nextpage);
                                     $this->session->set_userdata('title',$title);
                                
-//                                    redirect('/../register/step3');
+                                    redirect('/../register/step4');
                             }
                     }
                     $this->load_view();
@@ -133,6 +133,7 @@ class Register extends MY_Controller // extends our controller - see it in the '
                             }
                     }
                     $this->load_view();
+                    
                  }
                  
          public function step5()

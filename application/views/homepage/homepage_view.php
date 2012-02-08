@@ -4,3 +4,10 @@
 <a href="/register/step1">
 	РЕГИСТРАЦИЯ
 </a>
+Login:
+<form action="/login/log" method="post">
+     Email:<input type="text" name="email" />
+     Парола: <input type="password" id="password" name="password" /> 
+     <input type="submit"  value="Продължи" class="buttonR" />
+</form>
+
