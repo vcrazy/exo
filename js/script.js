@@ -60,11 +60,4 @@ $(document).ready(function(){
 			email: "Please enter a valid email address"
 		}
 	});
-
-	$('#menu li[id^=menu_]').click(function(){
-		$('.page').hide();
-		$('#page_' + $(this).attr('id')).show();
-
-		return false;
-	});
 });
