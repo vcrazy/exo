@@ -20,6 +20,8 @@ class MY_Controller extends CI_Controller
 		$this->data['menus'] = $all_menus; 
 		$all_footers = $this->Model_admin->get_footer();
 		$this->data['footer_links'] = $all_footers;
+
+		$this->data['selected_menu'] = $this->uri->rsegment(1);
 		
 		$this->set_menu_titles();
 	}
