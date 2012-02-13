@@ -69,7 +69,7 @@ class Register extends MY_Controller // extends our controller - see it in the '
                                     $this->session->set_userdata('nextpage',$nextpage);
                                     $this->session->set_userdata('title',$title);
                                
-//                                    redirect('/../register/step3');
+                                    redirect('/../register/step3');
                             }
                     }
                     if ($this->session->userdata('template'))
@@ -84,7 +84,6 @@ class Register extends MY_Controller // extends our controller - see it in the '
                  
         public function step3()
                  {
-                var_dump( $this->session->all_userdata());
                 
                 $this->data['view'] = 'registration/registration_step3_view'; // main view we will see in the middle of the page
 
@@ -110,22 +109,25 @@ class Register extends MY_Controller // extends our controller - see it in the '
                                            );
                                 $this->session->set_userdata($arr);
                                 $this->load->model("Model_register");
+
                                 $this->Model_register->save_registration();
                                 redirect('/../register/step4');
                                 
                             }
                     }
-//                    if ($this->session->userdata('nextpage','title','homepage'))
-//                    {
+                    if ($this->session->userdata('nextpage','title','homepage'))
+                    {
                         $this->load_view();
-//                    }
-//                    else
-//                    {
-//                        redirect('/../register/step2');
-//                    }
+                    }
+                    else
+                    {
+                        redirect('/../register/step2');
+                    }
                  }
+                               
                  
          public function step4()
+
                  {
                # var_dump( $this->session->all_userdata());
                 
