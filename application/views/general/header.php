@@ -17,9 +17,9 @@
 				<div id="head_sup" class="head_pad">
 					<?php include('menu.php'); ?>
 					<h1 class="logo">
-						<a href="/index.html" class="site_title">EXO.bg</a>
+						<a href="/" class="site_title">EXO.bg</a>
 						<div>
-							<a href="/index.html" id="site_slogan">
+							<a href="/" id="site_slogan">
 								Представете Вашия бизнес по лесен и елегантен начин
 							</a>
 						</div>
