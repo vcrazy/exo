@@ -101,7 +101,6 @@ class Register extends MY_Controller // extends our controller - see it in the '
                  
         public function step4()
                  {
-                var_dump( $this->session->all_userdata());
                 
                 $this->data['view'] = 'registration/registration_step4_view'; // main view we will see in the middle of the page
 
@@ -127,14 +126,16 @@ class Register extends MY_Controller // extends our controller - see it in the '
                                            );
                                 $this->session->set_userdata($arr);
                                 $this->load->model("Model_register");
-                                $this->Model_register->save_registration();
-                                redirect('/../register/step5');
+                                $this->Model_register->save_registration(TRUE);
+                                redirect('/register/step5');
                                 
                             }
                     }
                     $this->load_view();
                     
                  }
+                 
+                 
                  
          public function step5()
                  {
