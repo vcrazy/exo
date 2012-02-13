@@ -17,7 +17,7 @@ $(document).ready(function(){
 	});
         
         $('#toregister').click(function(){
-           window.location.href='/register/step4';
+           window.location.href='/register/step3';
        })
 
        $('#ckeditor').ckeditor();
