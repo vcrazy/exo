@@ -54,6 +54,42 @@ class Model_admin extends CI_Model{
 		}
 		return $arr;
 	}
+        public function searchfor ($arr)
+        {
+               $count=0;    
+                foreach ($arr as $key => $value)
+                {
+                    if ($count==0)
+                    {
+                        $this->db->like($key, $value);
+                    }
+                    else
+                    {
+                        $this->db->or_like($key, $value); 
+                    }
+                    $count++;
+                }
+                $this->db->select('id, email,sites.domain ,priority');
+                $this->db->from('users');
+                $this->db->join('sites', 'users.id = sites.user_id');
+                $query=$this->db->get();
+                return $query->result(); 
+           //     $this->db->select('id,');
+            //    $this->db->where('name', $name);
+	//	$this->db->from('users');
+	//	$query = $this->db->get(); 
+        }
+        public function checkfromid ($id)
+        {
+           $query = $this->db->get_where('users', array('id' => $id));
+           $arr = array();
+           foreach ($query->result() as $row)
+            {
+                 $arr['email']=$row->email;
+                 $arr['priority']=$row->priority;
+            }
+           return $arr;
+        }
 }
 
 ?>

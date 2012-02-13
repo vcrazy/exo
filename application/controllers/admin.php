@@ -32,28 +32,6 @@ class Admin extends MY_Controller // extends our controller - see it in the 'cor
 		$this->load->helper('url');
 		redirect('/admin/create_menu');
 	}
-
-        public function show_admin()
-        {
-            $this->data['email']=$this->session->userdata('email');
-            $this->data['priority']=$this->session->userdata('priority');
-//            if ( $this->data['priority'] == 2 )
-//            {
-                $this->data['view'] = 'admin/main_view';
-                $this->load_view();
-//            } 
-//            else
-//            {
-//                $this->data['view'] = 'admin/error_admin';
-//                $this->load_view();
-//            }
-        }
-       public function user_correction()
-       {
-           $this->data['view']='admin/user_correction';
-           $this->load_view();
-       
-}
 	
 	public function create_footer()
 	{
@@ -72,4 +50,60 @@ class Admin extends MY_Controller // extends our controller - see it in the 'cor
 
 		$this->load_view();
 	}
+        
+        public function show_admin()
+        {
+            $this->data['email']=$this->session->userdata('email');
+            $this->data['priority']=$this->session->userdata('priority');
+//           if ( $this->data['priority'] == 2 )
+//            {
+                $this->data['view'] = 'admin/main_view';
+                $this->load_view();
+//            } 
+//            else
+//            {
+//                $this->data['view'] = 'admin/error_admin';
+//                $this->load_view();
+//            }
+        }
+       public function user_search()
+       {
+           $this->data['view']='admin/user_search';
+           $this->load->helper(array('form', 'url'));
+           $this->load->library('form_validation');
+           if( !empty($_POST)  )
+            {
+               $searchid=$this->input->post('searchid');
+               $searchemail=$this->input->post('searchemail');
+               $searchdomein=$this->input->post('searchdomein');
+               $searchfor=$this->input->post('searchfor');
+               
+               $arr=array();
+               if ($searchid) $arr['id']=$searchid;
+               if ($searchemail) $arr['email']=$searchemail;
+               if ($searchdomein) $arr['domain']=$searchdomein;
+               
+               $this->load->model("Model_admin");
+               $this->data['values']=$this->Model_admin->searchfor($arr);
+               
+            }
+           $this->load_view();  
+        }
+       public function user_correct()
+       {
+           $this->data['view']='admin/user_correct';
+           $this->load->helper(array('form', 'url'));
+           $this->data['user_id'] = $this->uri->segment(3, 0); 
+           $this->load->library('form_validation');
+           $this->load->model("Model_admin");
+           $arr=array();
+           $arr=$this->Model_admin->checkfromid($this->data['user_id']);
+           $this->data['email']=$arr['email'];
+           $this->data['priority']=$arr['priority'];
+           if( !empty($_POST) )
+            {
+               $this->form_validation->set_rules('priority', 'Priority', 'required');
+            }
+           $this->load_view();
+       }
 }

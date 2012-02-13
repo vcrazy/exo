@@ -3,7 +3,7 @@
 class Model_contacts extends CI_Model {
 
     public function save_contacts() {
-		$name = $_POST['name'];
+	$name = $_POST['name'];
         $email = $_POST['email'];
         $phone = $_POST['phone'];
         $message = $_POST['message'];
