@@ -110,7 +110,7 @@ class Register extends MY_Controller // extends our controller - see it in the '
                                 $this->session->set_userdata($arr);
                                 $this->load->model("Model_register");
 
-                                $this->Model_register->save_registration();
+                                $this->Model_register->save_registration(TRUE);
                                 redirect('/../register/step4');
                                 
                             }
