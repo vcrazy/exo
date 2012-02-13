@@ -5,11 +5,7 @@
 		<title>Eeeeeeeexxoooooooooo :)</title>
 		<link href="/css/styles.css" rel="stylesheet" type="text/css" media="all" />
 		<script type="text/javascript" src="/js/jquery.min.js"></script>
-		<script type="text/javascript" src="/js/jquery.validate.min.js"></script>
-		<script type="text/javascript" src="/js/ckeditor/ckeditor.js"></script>
-		<script type="text/javascript" src="/js/ckeditor/adapters/jquery.js"></script>
-		<script type="text/javascript" src="/js/exo.js"></script>
-		<script type="text/javascript" src="/js/script.js"></script>		
+		<script type="text/javascript" src="/js/preview.js"></script>
 	</head>
 	<body>
 		<div id="head">
