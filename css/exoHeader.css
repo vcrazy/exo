@@ -1,13 +1,13 @@
 /* ----- Header ----- */
 
 #header-left {
-	background-image: -webkit-radial-gradient(center bottom, circle farthest-corner, #8aaac1 0%, #546378 50%, #15181f 100%);
+	background-image: -webkit-radial-gradient(center bottom, circle farthest-corner, #8aaac1 0%, #424756 39%, #15181f 100%);
 }
 #header-right {
-	background-image: -webkit-radial-gradient(center bottom, circle farthest-corner, #8aaac1 0%, #546378 50%, #15181f 100%);
+	background-image: -webkit-radial-gradient(center bottom, circle farthest-corner, #8aaac1 0%, #424756 39%, #15181f 100%);
 }
 #header {
-	background-image: -webkit-radial-gradient(center bottom, circle farthest-corner, #8aaac1 0%, #546378 50%, #15181f 100%);
+	background-image: -webkit-radial-gradient(center bottom, circle farthest-corner, #8aaac1 0%, #424756 39%, #15181f 100%);
 	height: 212px;
 }
 h1#logo {
