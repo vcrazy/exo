@@ -28,40 +28,13 @@ class Register extends MY_Controller // extends our controller - see it in the '
                     }
                 $this->load_view();
             }
-       	public function step2()
-            {   
-                $this->data['view'] = 'registration/registration_step2_view'; // main view we will see in the middle of the page
-
-                $this->load->helper(array('form', 'url'));
-                $this->load->library('form_validation');
-                
-                 if( !empty($_POST)  )
-                    {
-
-                        $this->form_validation->set_rules('ckeditor', 'Ckeditor', 'required');
-                        $this->form_validation->set_rules('title', 'TitleMain', 'required');
-                        if ($this->form_validation->run() != FALSE)
-                            {
-                                
-                                $nextpage=array($_POST['ckeditor']);
-                                $title=array($_POST['title']);
-                                $arr= array(
-                                        'nextpage' => $nextpage,
-                                        'title' => $title
-                                           );
-                                $this->session->set_userdata('nextpage',$nextpage);
-                                $this->session->set_userdata('title',$title);
-                                
-                                redirect('/../register/step3');
-                            }
-                    }
-                    $this->load_view();
-               }     
-          public function step3()
+            
+       	              
+          public function step2()
                  {
               #  var_dump( $this->session->all_userdata());
                 
-                $this->data['view'] = 'registration/registration_step3_view'; // main view we will see in the middle of the page
+                $this->data['view'] = 'registration/registration_step2_view'; // main view we will see in the middle of the page
 
                 $this->load->helper(array('form', 'url'));
                 $this->load->library('form_validation');
@@ -78,32 +51,42 @@ class Register extends MY_Controller // extends our controller - see it in the '
                                 {
                                     $nextpage=array();
                                     $title=array();
+//                                    $homepage='';
                                 }
                                 else
                                 {
                                     $nextpage = $this->session->userdata('nextpage');
                                     $title = $this->session->userdata('title');
+//                                    $homepage= $this->session->userdata('homepage');
                                 }
                                     $nextpage[]=$_POST['ckeditor'];
                                     $title[]=$_POST['title'];
                                     $arr= array(
                                                 'nextpage' => $nextpage,
-                                                'title' => $title
+                                                'title' => $title,
+//                                                'homepage' => $homapage
                                                );
                                     $this->session->set_userdata('nextpage',$nextpage);
                                     $this->session->set_userdata('title',$title);
                                
-//                                    redirect('/../register/step3');
+                                    redirect('/../register/step3');
                             }
                     }
+                    if ($this->session->userdata('template'))
+                    {
                     $this->load_view();
+                    }
+                    else
+                    {
+                    redirect('/../register/step1');       
+                    }
                  }
                  
-        public function step4()
+        public function step3()
                  {
+
                # var_dump( $this->session->all_userdata());
-                
-                $this->data['view'] = 'registration/registration_step4_view'; // main view we will see in the middle of the page
+                $this->data['view'] = 'registration/registration_step3_view'; // main view we will see in the middle of the page
 
 		
                 $this->load->helper(array('form', 'url'));
@@ -128,25 +111,42 @@ class Register extends MY_Controller // extends our controller - see it in the '
                                            );
                                 $this->session->set_userdata($arr);
                                 $this->load->model("Model_register");
-                                $this->Model_register->save_registration();
-                                redirect('/../register/step5');
+
+                                $this->Model_register->save_registration(TRUE);
+                                redirect('/../register/step4');
                                 
                             }
                     }
-                    $this->load_view();
+                    if ($this->session->userdata('nextpage','title','homepage'))
+                    {
+                        $this->load_view();
+                    }
+                    else
+                    {
+                        redirect('/../register/step2');
+                    }
                  }
+                               
                  
-         public function step5()
+         public function step4()
+
                  {
                 var_dump( $this->session->all_userdata());
                 
-                $this->data['view'] = 'registration/registration_step5_view'; // main view we will see in the middle of the page
+                $this->data['view'] = 'registration/registration_step4_view'; // main view we will see in the middle of the page
 
 		
                 $this->load->helper(array('form', 'url'));
                 $this->load->library('form_validation');
                 
-               
-                    $this->load_view();
+               if ($this->session->userdata('email','password','domain'))
+                    {
+                        $this->load_view();
+                    }
+                    else
+                    {
+                        redirect('/../register/step3');
+                    }
+                    
                  }
 }

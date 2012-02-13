@@ -2,7 +2,7 @@
 
 class Model_register extends CI_Model {
 
-    public function save_registration() {
+    public function save_registration($autologin = FALSE) {
         $nextpage = $this->session->userdata('nextpage');
         $title = $this->session->userdata('title');
       //  $homepage = $this->session->userdata('homepage'); 
@@ -41,7 +41,13 @@ class Model_register extends CI_Model {
                     
             $this->db->insert('pages', $page);
         }
-
+        
+        if($autologin == TRUE)
+        {	
+            $this->load->model('Model_login');
+            $this->Model_login->login( $email, $password);
+	}
+        
 	 return true;
     }
 }

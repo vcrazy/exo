@@ -4,7 +4,7 @@ $(document).ready(function(){
 	});
         
         $('#toregister').click(function(){
-           window.location.href='/register/step4';
+           window.location.href='/register/step3';
        })
 
        $('#ckeditor').ckeditor();
@@ -62,12 +62,5 @@ $(document).ready(function(){
                             required:"Please enter a valid email address"
                         }
 		}
-	});
-
-	$('#menu li[id^=menu_]').click(function(){
-		$('.page').hide();
-		$('#page_' + $(this).attr('id')).show();
-
-		return false;
 	});
 });

@@ -6,7 +6,7 @@ img											{border:0}
 h1,h2,h3,h4,h5,h6							{font-weight:normal}
 li											{list-style:none}
 
-#head										{width:100%; float:left; background:url(../images/headBg.png) repeat-x;}
+#head										{width:100%; float:left; background:url(/images/headBg.png) repeat-x}
 .head_height								{height:478px}
 .head_pad									{padding-bottom:30px}
 #head_cen									{width:800px; margin:0 auto}
@@ -14,10 +14,10 @@ li											{list-style:none}
 h1.logo, h1.logo a, h1.logo a:visited			{width:800px; height:36px; float:left; color: #31a1ff; }
 h1.logo div a, h1.logo div a:visited {color: white; font-size: 11pt; margin-top: 5px;}
 #head menu									{height:44px; margin-top:8px; float:right}
-#head menu li									{width:auto; margin-left:1px; float:left; font-family:Arial, Helvetica, sans-serif; font-size:13px; color:#888888; line-height:35px; text-transform:uppercase}
+#head menu li									{width:auto; margin-left:1px; float:left; font-family:Arial, Helvetica, sans-serif; font-size:13px; color:#5f5f5f; line-height:35px; text-transform:uppercase}
 #head menu li:first-child						{margin:0}
 #head menu li	a,#head menu li a.active			{width:auto; height:42px; padding:0 23px; float:left; color:inherit; background:#252525}
-#head menu li a.not-active			{width:auto; height:42px; padding:0 23px; float:left; color:#888888; background:#252525}
+#head menu li a.not-active			{width:auto; height:42px; padding:0 23px; float:left; color:#5f5f5f; background:#252525}
 #head menu li	a:hover,#head menu li a.active	{color:#31a1ff; background:#272727}
 #cu3er-container							{width:800px; height:360px; float:left; outline:0; position:absolute; top:166px; left:0px; z-index:10}
 img.ban_bg									{width:auto; float:left; position:absolute; top:139px; left:-24px}
@@ -46,7 +46,7 @@ h2 span.site_title							{color:#3b3b3b; text-transform:uppercase; margin-right:
 .lftWrap									{width:300px; float:left; clear:left}
 .lftWrap p									{width:100%; float:left; font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:28px; color:#4d4d4d}
 .rgtWrap input.txt							{width:176px; margin:20px 20px 0 0; padding:3px 5px; height:30px; float:left; font-family:Arial, Helvetica, sans-serif; font-size:17px; color:#bfbfbf; font-weight:bold; border:#cbcbcb solid 1px; background:#ffffff}
-.rgtWrap input.btn							{width:113px; height:42px; margin-top:18px; float:left; font-family:Arial, Helvetica, sans-serif; font-size:17px; color:#ffffff; font-weight:bold; text-align:center; cursor:pointer; border:0; background:url(../images/submitBtn.png) no-repeat}
+.rgtWrap input.btn							{width:113px; height:42px; margin-top:18px; float:left; font-family:Arial, Helvetica, sans-serif; font-size:17px; color:#ffffff; font-weight:bold; text-align:center; cursor:pointer; border:0; background:url(/images/submitBtn.png) no-repeat}
 .rgtWrap input.btn:active					{background-position:1px 1px}
 .rgtWrap									{width:500px; float:left}
 .rgtWrap h3									{width:100%}
@@ -64,7 +64,7 @@ ul#infoPan li p.descrip						{margin-top:13px; font-size:12px; line-height:16px;
 #quotPan									{width:848px; height:80px; margin-top:42px; float:left; position:relative; left:-24px; border-top:#c9c9c9 solid 1px; background:url(../images/pat.png) repeat }
 #quotPan h3									{width:274px; margin:14px 0 0 24px; float:left; line-height:45px}
 #quotPan input.txt							{width:176px; margin:20px 20px 0 0; padding:3px 5px; height:30px; float:left; font-family:Arial, Helvetica, sans-serif; font-size:17px; color:#bfbfbf; font-weight:bold; border:#cbcbcb solid 1px; background:#ffffff}
-#quotPan input.btn							{width:113px; height:42px; margin-top:18px; float:left; font-family:Arial, Helvetica, sans-serif; font-size:17px; color:#ffffff; font-weight:bold; text-align:center; cursor:pointer; border:0; background:url(../images/submitBtn.png) no-repeat}
+#quotPan input.btn							{width:113px; height:42px; margin-top:18px; float:left; font-family:Arial, Helvetica, sans-serif; font-size:17px; color:#ffffff; font-weight:bold; text-align:center; cursor:pointer; border:0; background:url(/images/submitBtn.png) no-repeat}
 #quotPan input.btn:active					{background-position:1px 1px}
 
 #blog										{width:506px; margin-top:24px; float:left}
@@ -81,9 +81,9 @@ ul#infoPan li p.descrip						{margin-top:13px; font-size:12px; line-height:16px;
 #latest ul li a								{width:auto; margin-top:25px; float:left; font-family:Arial, Helvetica, sans-serif; font-size:18px; color:#848484; line-height:24px}
 #latest ul li p								{width:100%; margin-top:16px; float:left; font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#5c5c5c; line-height:16px}	
 
-#foot										{width:100%; height:90px; float:left; background:url(../images/footBg.png) repeat-x;}
+#foot										{width:100%; height:90px; float:left; background:url(/images/footBg.png) repeat-x;}
 #foot_cen									{width:800px; margin:18px auto 0 auto}
-#foot h6									{width:160px; height:36px; margin:0 auto; text-indent:-9999px; background:url(../images/logo.png) no-repeat}
+#foot h6									{width:160px; height:36px; margin:0 auto; text-indent:-9999px; background:url(/images/logo.png) no-repeat}
 #foot h6 a									{width:100%; height:100%; float:left}
 #foot ul									{margin:11px auto 0 auto;}
 #foot ul li								{width:auto; float:left; font-family:"Trebuchet MS", Arial, Helvetica, sans-serif; font-size:14px; color:#767676; line-height:18px}
@@ -92,19 +92,4 @@ ul#infoPan li p.descrip						{margin-top:13px; font-size:12px; line-height:16px;
 #foot p										{width:100%; margin-top:10px; float:left; font-family:"Trebuchet MS", Arial, Helvetica, sans-serif; font-size:14px; color:#767676; line-height:18px; text-align:center}
 #foot p	a, #foot p	a:visited									{color:white;}
 
-#service_pan								{width:100%; margin-top:20px; float:left}
-#service_pan ul								{width:100%; float:left}
-#service_pan ul li							{width:325px; height:100px; margin:0 30px; float:left; border-bottom:#c9c9c9 solid 1px}
-/*#service_pan ul li:first-child				{border:0}
-*/#service_pan ul li:hover					{background:#fbfbfb}
-#service_pan ul li h5						{width:auto; margin:10px 0 0 10px; float:left; font-family:Arial, Helvetica, sans-serif; font-size:16px; color:#31a1ff}
-#service_pan ul li p						{width:300px; margin:5px 0 0 10px; float:left; font-family:"Trebuchet MS", Arial, Helvetica, sans-serif; font-size:12px; color:#5c5c5c}
-#service_pan ul li p a						{width:auto; float:right; color:#31a1ff}
-
-/* --------------------------------------- */
-#register {color: white; margin: 10px 0px 0px 0px;}
-#register div {float: left;}
-#register div input.small {width: 20px;}
-#register div span.span_text {display: inline-block; width: 160px;}
-#register input[type="text"], #register input[type="password"] {background: #dddddd; border: 1px solid black; height: 18px;}
-#register input[type="submit"] {border-radius: 3px; padding: 5px; background-color: white; margin-top: 5px;}
+textarea {width: 350px; height: 120px;}
