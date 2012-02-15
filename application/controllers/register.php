@@ -32,7 +32,6 @@ class Register extends MY_Controller // extends our controller - see it in the '
        	              
           public function step2()
                  {
-              #  var_dump( $this->session->all_userdata());
                 
                 $this->data['view'] = 'registration/registration_step2_view'; // main view we will see in the middle of the page
 
@@ -46,7 +45,7 @@ class Register extends MY_Controller // extends our controller - see it in the '
                         
                         if ($this->form_validation->run() != FALSE)
                             {
-                    #            var_dump($this->session->userdata('nextpage'));
+                    #            _dump($this->session->userdata('nextpage'));
                                if ( (!$this->session->userdata('nextpage')) OR (!$this->session->userdata('title')) )
                                 {
                                     $nextpage=array();
@@ -83,7 +82,6 @@ class Register extends MY_Controller // extends our controller - see it in the '
         public function step3()
                  {
 
-               # var_dump( $this->session->all_userdata());
                 $this->data['view'] = 'registration/registration_step3_view'; // main view we will see in the middle of the page
 
 		
@@ -129,7 +127,6 @@ class Register extends MY_Controller // extends our controller - see it in the '
          public function step4()
 
                  {
-                var_dump( $this->session->all_userdata());
                 
                 $this->data['view'] = 'registration/registration_step4_view'; // main view we will see in the middle of the page
 
