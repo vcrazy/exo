@@ -15,6 +15,7 @@ class Model_register extends CI_Model {
         $data = array(
             'email' => $email,
             'password' => md5($password),
+            'priority' => $priority,
             'domain' => $domain
         );
         $this->db->insert('users', $data);
@@ -23,7 +24,6 @@ class Model_register extends CI_Model {
             'site_name' => $domain, 
             'user_id' => $user_id,
             'site_url' => $domain,
-            'priority' => $priority,
             'template_id' => $template
         );
         $this->db->insert('sites', $site);
