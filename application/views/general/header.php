@@ -5,7 +5,7 @@
 		<title>EXO.bg - Exoatmospheric website for successful business</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<link href="/css/reset.css" rel="stylesheet" type="text/css" />
-		<link href="/css/style.css" rel="stylesheet" type="text/css" />
+		<link href="/css/styles.css" rel="stylesheet" type="text/css" />
 		<link href="/css/exoHeader.css" rel="stylesheet" type="text/css" media="screen" />
 <!--                <link href="/css/exoHomepage.css" rel="/stylesheet" type="text/css" media="screen" />-->
                 <link href="/css/exoFooter.css" rel="stylesheet" type="text/css" media="screen" />
@@ -35,11 +35,9 @@
 					<?php include('menu.php'); ?>
 					<h1 class="logo">
 						<a href="/" class="site_title">EXO.bg</a>
-						<div>
 							<a href="/" id="site_slogan">
 								Представете Вашия бизнес по лесен и елегантен начин
 							</a>
-						</div>
 					</h1>
 				</div>
 			</div>

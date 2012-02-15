@@ -5,7 +5,6 @@
 <a href="/register/step1">
 	РЕГИСТРАЦИЯ
 </a>
-<<<<<<< HEAD
 </div>
 Login:
 <form action="/login/log" method="post">

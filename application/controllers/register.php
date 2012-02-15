@@ -63,13 +63,11 @@ class Register extends MY_Controller // extends our controller - see it in the '
                                     $title[]=$_POST['title'];
                                     $arr= array(
                                                 'nextpage' => $nextpage,
-                                                'title' => $title,
+                                                'title' => $title
 //                                                'homepage' => $homapage
                                                );
                                     $this->session->set_userdata('nextpage',$nextpage);
                                     $this->session->set_userdata('title',$title);
-                               
-                                    redirect('/../register/step3');
                             }
                     }
                     if ($this->session->userdata('template'))
