@@ -90,6 +90,15 @@ class Model_admin extends CI_Model{
             }
            return $arr;
         }
+        public function change_priority($data)
+        {
+            $arr = array(
+               'priority' => $data['priority']
+            );
+
+            $this->db->where('id', $data['id']);
+            $this->db->update('users', $arr); 
+        }
 }
 
 ?>

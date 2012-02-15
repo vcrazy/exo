@@ -100,9 +100,21 @@ class Admin extends MY_Controller // extends our controller - see it in the 'cor
            $arr=$this->Model_admin->checkfromid($this->data['user_id']);
            $this->data['email']=$arr['email'];
            $this->data['priority']=$arr['priority'];
+           $this->data['success']=FALSE;
            if( !empty($_POST) )
             {
                $this->form_validation->set_rules('priority', 'Priority', 'required');
+               if ($this->form_validation->run() != FALSE)
+               {
+                   $user=$this->input->post("user");
+                   $priority=$this->input->post("priority");
+                   $data=array();
+                   $data['id']=$user;
+                   $data['priority']=$priority;
+                   $this->load->model("Model_admin");
+                   $this->Model_admin->change_priority($data);
+                   $this->data['success']=TRUE;
+               }  
             }
            $this->load_view();
        }
