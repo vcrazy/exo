@@ -9,8 +9,8 @@
 						<span class="menu_title"><?php echo $menu_title ?></span>
 					</h2>
 				</div>
-				<div id="site_content">
-						<?php include($view . '.php'); ?>
+				<div>
+					<?php include($view . '.php'); ?>
 				</div>
 			</div>
 		</div>
