@@ -55,7 +55,8 @@ class Admin extends MY_Controller // extends our controller - see it in the 'cor
         {
             $this->data['email']=$this->session->userdata('email');
             $this->data['priority']=$this->session->userdata('priority');
-//           if ( $this->data['priority'] == 2 )
+            var_dump($this->session->userdata('priority'));
+//            if ( $this->data['priority'] == 2 )
 //            {
                 $this->data['view'] = 'admin/main_view';
                 $this->load_view();

@@ -8,23 +8,25 @@ class Model_register extends CI_Model {
       //  $homepage = $this->session->userdata('homepage'); 
         $template = $this->session->userdata('template');
         $priority = $this->session->userdata('priority');
-        $email = $_POST['email']; #$this->input->post('email');
-        $password = $_POST['password'];
-        $domain = $_POST['domain'];
+        $email = $this->input->post('email');
+        $password =$this->input->post('password');
+        $domain = $this->input->post('domain');
+        $site_name=$this->input->post('site_name');
 
         $data = array(
             'email' => $email,
             'password' => md5($password),
-            'priority' => $priority,
-            'domain' => $domain
+            'priority' => $priority
+//            'domain' => $domain
         );
         $this->db->insert('users', $data);
         $user_id = $this->db->insert_id();
         $site = array(
-            'site_name' => $domain, 
+            'site_name' => $site_name, 
             'user_id' => $user_id,
-            'site_url' => $domain,
-            'template_id' => $template
+            'site_url' => $domain.'.exo.bg',
+            'template_id' => $template,
+            'domain' => $domain
         );
         $this->db->insert('sites', $site);
         $site_id = $this->db->insert_id();
@@ -35,8 +37,8 @@ class Model_register extends CI_Model {
             'title'    => $title[$count-1],
             'page_num' => $count,
             'page_content' => $page1,
-            'site_id' => $site_id,
-            'user_id' => $user_id
+            'site_id' => $site_id
+//            'user_id' => $user_id
             );
                     
             $this->db->insert('pages', $page);

@@ -96,16 +96,19 @@ class Register extends MY_Controller // extends our controller - see it in the '
                         $this->form_validation->set_rules('password', 'Password', 'required|matches[conf_pass]');
                         $this->form_validation->set_rules('conf_pass', 'Confirm Password', 'required');
                         $this->form_validation->set_rules('domain', 'Domain', 'required|valid_domains|is_unique[users.domain]');
+                        $this->form_validation->set_rules('site_name', 'Site Name', 'required');
                         if ($this->form_validation->run() != FALSE)
                             {   
                                 $email=$_POST['email'];
                                 $password=$_POST['password'];
                                 $domain=$_POST['domain'];
+                                $site_name=$this->input->post('site_name');
                                 $arr= array(
                                     'email'    => $email, 
                                     'password' => $password,
                                     'domain'   => $domain,
-                                    'priority' =>'1'
+                                    'priority' =>'1',
+                                    'site_name' => $site_name
                                            );
                                 $this->session->set_userdata($arr);
                                 $this->load->model("Model_register");
