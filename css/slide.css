@@ -24,7 +24,7 @@ Version: 1.0
 
 /* Panel Tab/button */
 .tab {
-  	background: url(../images/panel/tab_b.png) repeat-x 0 0;
+  	background: url(/images/panel/tab_b.png) repeat-x 0 0;
 	height: 7px;
 	position: relative;
     top: 0;
@@ -32,7 +32,7 @@ Version: 1.0
 
 ul.login {
 	display: block;
-	position: absolute;
+	position: relative;
   	float: left;
   	clear: left;
   	height: 42px;
@@ -41,14 +41,13 @@ ul.login {
 	line-height: 42px;
 	margin: 0;
 	margin-top: -7px;
-	left: 150px;
   	color: white;
   	font-size: 12px;
 	text-align: center;
 }
 
 ul.login li.left {
-  	background: url(../images/panel/tab_l.png) no-repeat left 0;
+  	background: url(/images/panel/tab_l.png) no-repeat left 0;
   	height: 42px;
 	width: 30px;
 	padding: 0;
@@ -58,7 +57,7 @@ ul.login li.left {
 }
 
 ul.login li.right {
-  	background: url(../images/panel/tab_r.png) no-repeat left 0;
+  	background: url(/images/panel/tab_r.png) no-repeat left 0;
   	height: 42px;
 	width: 30px;
 	padding: 0;
@@ -73,7 +72,7 @@ ul.login li {
 	display: block;
 	float: left;
 	height: 42px;
-  	background: url(../images/panel/tab_m.png) repeat-x 0 0;
+  	background: url(/images/panel/tab_m.png) repeat-x 0 0;
 }
 
 ul.login li a {
@@ -97,10 +96,10 @@ a.open, a.close {
 	top: 11px;
 }
 
-a.open {background: url(../images/panel/bt_open.png) no-repeat left 0;}
-a.close {background: url(../images/panel/bt_close.png) no-repeat left 0;}
-a:hover.open {background: url(../images/panel/bt_open.png) no-repeat left -19px;}
-a:hover.close {background: url(../images/panel/bt_close.png) no-repeat left -19px;}
+a.open {background: url(/images/panel/bt_open.png) no-repeat left 0;}
+a.close {background: url(/images/panel/bt_close.png) no-repeat left 0;}
+a:hover.open {background: url(/images/panel/bt_open.png) no-repeat left -19px;}
+a:hover.close {background: url(/images/panel/bt_close.png) no-repeat left -19px;}
 
 /* sliding panel */
 #toppanel {
@@ -223,13 +222,13 @@ a:hover.close {background: url(../images/panel/bt_close.png) no-repeat left -19p
 
 #panel .content input.bt_login {
 	width: 74px;
-	background: transparent url(../images/panel/bt_login.png) no-repeat 0 0;
+	background: transparent url(/images/panel/bt_login.png) no-repeat 0 0;
 }
 
 #panel .content input.bt_register {
 	width: 94px;
 	color: white;
-	background: transparent url(../images/panel/bt_register.png) no-repeat 0 0;
+	background: transparent url(/images/panel/bt_register.png) no-repeat 0 0;
 }
 
 #panel .lost-pwd {
@@ -240,4 +239,3 @@ a:hover.close {background: url(../images/panel/bt_close.png) no-repeat left -19p
 	font-size: 0.95em;
 	text-decoration: underline;
 }
-

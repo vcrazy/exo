@@ -9,9 +9,9 @@ li											{list-style:none}
 #head										{width:100%; float:left; background:url(/images/headBg.png) repeat-x}
 .head_height								{height:478px}
 .head_pad									{padding-bottom:30px}
-#head_cen									{width:800px; margin:0 auto}
-#head_sup									{width:800px; float:left; position:relative}
-h1.logo										{width:800px; float:left; color: #31a1ff; height:50px; }
+#head_cen									{width:980px; margin:0 auto}
+#head_sup									{width:980px; float:left; position:relative}
+h1.logo										{width:980px; float:left; color: #31a1ff; height:50px; }
 h1.logo a.site_title, h1.logo a.site_title:visited		{display:inline-block; height:36px; float: left; color: #31a1ff;}
 h1.logo a#site_slogan, h1.logo a#site_slogan:visited	{color: white; font-size: 11pt; float: left; margin-top: 10px;}
 #head menu									{height:44px; margin-top:8px; float:right}
@@ -22,8 +22,8 @@ h1.logo a#site_slogan, h1.logo a#site_slogan:visited	{color: white; font-size: 1
 #head menu li	a:hover,#head menu li a.active	{color:#31a1ff; background:#272727}
 
 #content									{width:100%; padding-bottom:36px; float:left; background:#ffffff url(/images/contentBg.png) repeat-x}
-#content_cen								{width:800px; margin:0 auto}
-#content_sup								{width:800px; float:left; position:relative}
+#content_cen								{width:980px; margin:0 auto}
+#content_sup								{width:980px; float:left; position:relative}
 
 #welcom_pan									{width:100%; margin-top:37px; float:left;}
 h2											{width:auto; margin-top:9px; float:left; font-family:Arial, Helvetica, sans-serif; font-size:26px; color:#31a1ff; font-weight:bold; line-height:30px; letter-spacing:-1.7px}
@@ -31,7 +31,7 @@ h2 span.site_title							{color:#3b3b3b; text-transform:uppercase; margin-right:
 h3											{width:auto; float:left; font-family:Arial, Helvetica, sans-serif; font-size:26px; color:#31a1ff; font-weight:bold; line-height:60px; letter-spacing:-1.7px}
 
 #foot										{width:100%; height:90px; float:left; background:url(/images/footBg.png) repeat-x;}
-#foot_cen									{width:800px; margin:18px auto 0 auto}
+#foot_cen									{width:980px; margin:18px auto 0 auto}
 #foot ul									{margin:11px auto 0 auto;}
 #foot ul li									{width:auto; float:left; font-family:"Trebuchet MS", Arial, Helvetica, sans-serif; font-size:14px; color:#767676; line-height:18px}
 #foot ul li a								{width:auto; float:left; color:#767676;}

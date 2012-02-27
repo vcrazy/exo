@@ -64,6 +64,7 @@
             <!-- /login -->	
 			<div class="tab">
 			</div> <!-- / top -->
+			<div style="width: 980px; margin: 0 auto;">
 				<ul class="login">
 					<li class="left">&nbsp;</li>
 					<li>Здравей !</li>
@@ -73,7 +74,9 @@
 						<a id="close" style="display: none;" class="close" href="#">Затвори панела</a>			
 					</li>
 					<li class="right">&nbsp;</li>
-				</ul> 
+				</ul>
+				<div class="clearfix"></div>
+			</div>
 		</div> <!--panel -->
 
 		<div id="head">
