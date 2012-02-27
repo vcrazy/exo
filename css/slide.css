@@ -44,6 +44,7 @@ ul.login {
   	color: white;
   	font-size: 12px;
 	text-align: center;
+	z-index: 520;
 }
 
 ul.login li.left {
@@ -108,7 +109,7 @@ a:hover.close {background: url(/images/panel/bt_close.png) no-repeat left -19px;
     top: 0;
 	left: 0; /* IE 6,7 fix */
     width: 100%;
-    z-index: 999;
+	z-index: 11;
     text-align: center;
     margin-left: auto;
     margin-right: auto;

@@ -75,7 +75,6 @@
 					</li>
 					<li class="right">&nbsp;</li>
 				</ul>
-				<div class="clearfix"></div>
 			</div>
 		</div> <!--panel -->
 
