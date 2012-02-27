@@ -19,6 +19,7 @@
 
 	</head>
 	<body>
+<<<<<<< HEAD
         <div id="toppanel">
 	  <div id="panel">
             <div class="content clearfix">
@@ -30,38 +31,68 @@
                 <?php include ('panel_register.php'); ?>
 
                 
+=======
+		<div id="toppanel">
+			<div id="panel">
+				<div class="content clearfix">
+					<div class="left">
+						<h1>Здравей!</h1>
+					</div>    
+					<div class="left">
+					<!-- Login Form -->
+						<form class="clearfix" action="" method="post">
+							<h1>Потребителски вход!</h1>
 
-            
-<!--            <div class="left">
-            
-            <h1>Members panel</h1>
-            
-            <p>You can put member-only data here</p>
-            <a href="registered.php">View a special member page</a>
-            <p>- or -</p>
-            <a href="?logoff">Log off</a>
-            
-            </div>-->
-            
-                <div class="left right"></div>
-            </div>
-	  </div>
+							<label class="grey" for="username">Имейл:</label>
+							<input class="field" type="text" name="email" id="email" value="" size="23" />
+							<label class="grey" for="password">Парола:</label>
+							<input class="field" type="password" name="password" id="password" size="23" />
+
+							<div class="clear"></div>
+							<input type="submit" name="submit" value="Login" class="bt_login" />
+						</form>
+					</div>
+					<div class="left right">			
+					<!-- Register Form -->
+						<form action="" method="post">
+							<h1>Регистрация:</h1>		
+							<label class="grey" for="email">Имейл:</label>
+							<input class="field" type="text" name="email" id="email" size="23" />
+							<input type="submit" name="submit" value="Register" class="bt_register" />
+						</form>
+					</div>
+				<!--            <div class="left">
+
+				<h1>Members panel</h1>
+
+				<p>You can put member-only data here</p>
+				<a href="registered.php">View a special member page</a>
+				<p>- or -</p>
+				<a href="?logoff">Log off</a>
+>>>>>>> a041d1d09d4cabf9be38faa798074dc8484bf5b1
+
+				</div>-->
+
+					<div class="left right"></div>
+				</div>
+			</div>
             <!-- /login -->	
-	 <div class="tab">
-            <ul class="login">
-	       <li class="left">&nbsp;</li>
-	       <li>Здравей !</li>
-               <li class="sep">|</li>
-               <li id="toggle">
-                    <a id="open" class="open" href="#">Отвори панела</a>
-                    <a id="close" style="display: none;" class="close" href="#">Затвори панела</a>			
-	       </li>
-	       <li class="right">&nbsp;</li>
-	   </ul> 
-	</div> <!-- / top -->
-	
-       </div> <!--panel -->
-            
+			<div class="tab">
+			</div> <!-- / top -->
+			<div style="width: 980px; margin: 0 auto;">
+				<ul class="login">
+					<li class="left">&nbsp;</li>
+					<li>Здравей !</li>
+					<li class="sep">|</li>
+					<li id="toggle">
+						<a id="open" class="open" href="#">Отвори панела</a>
+						<a id="close" style="display: none;" class="close" href="#">Затвори панела</a>			
+					</li>
+					<li class="right">&nbsp;</li>
+				</ul>
+			</div>
+		</div> <!--panel -->
+
 		<div id="head">
 			<div id="head_cen">
 				<div id="head_sup" class="head_pad">
