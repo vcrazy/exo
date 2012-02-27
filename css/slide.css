@@ -25,15 +25,14 @@ Version: 1.0
 /* Panel Tab/button */
 .tab {
   	background: url(../images/panel/tab_b.png) repeat-x 0 0;
-	height: 42px;
+	height: 7px;
 	position: relative;
     top: 0;
-    z-index: 999;
 }
 
-.tab ul.login {
+ul.login {
 	display: block;
-	position: relative;
+	position: absolute;
   	float: left;
   	clear: left;
   	height: 42px;
@@ -41,13 +40,14 @@ Version: 1.0
   	font-weight: bold;
 	line-height: 42px;
 	margin: 0;
+	margin-top: -7px;
 	left: 150px;
   	color: white;
   	font-size: 12px;
 	text-align: center;
 }
 
-.tab ul.login li.left {
+ul.login li.left {
   	background: url(../images/panel/tab_l.png) no-repeat left 0;
   	height: 42px;
 	width: 30px;
@@ -57,7 +57,7 @@ Version: 1.0
 	float: left;
 }
 
-.tab ul.login li.right {
+ul.login li.right {
   	background: url(../images/panel/tab_r.png) no-repeat left 0;
   	height: 42px;
 	width: 30px;
@@ -67,7 +67,7 @@ Version: 1.0
 	float: left;
 }
 
-.tab ul.login li {
+ul.login li {
  	text-align: left;
   	padding: 0 6px;
 	display: block;
@@ -76,17 +76,17 @@ Version: 1.0
   	background: url(../images/panel/tab_m.png) repeat-x 0 0;
 }
 
-.tab ul.login li a {
+ul.login li a {
 	color: #15ADFF;
 }
 
-.tab ul.login li a:hover {
+ul.login li a:hover {
 	color: white;
 }
 
-.tab .sep {color:#414141}
+.sep {color:#414141}
 
-.tab a.open, .tab a.close {
+a.open, a.close {
 	height: 20px;
 	line-height: 20px !important;
 	padding-left: 30px !important;
@@ -97,16 +97,17 @@ Version: 1.0
 	top: 11px;
 }
 
-.tab a.open {background: url(../images/panel/bt_open.png) no-repeat left 0;}
-.tab a.close {background: url(../images/panel/bt_close.png) no-repeat left 0;}
-.tab a:hover.open {background: url(../images/panel/bt_open.png) no-repeat left -19px;}
-.tab a:hover.close {background: url(../images/panel/bt_close.png) no-repeat left -19px;}
+a.open {background: url(../images/panel/bt_open.png) no-repeat left 0;}
+a.close {background: url(../images/panel/bt_close.png) no-repeat left 0;}
+a:hover.open {background: url(../images/panel/bt_open.png) no-repeat left -19px;}
+a:hover.close {background: url(../images/panel/bt_close.png) no-repeat left -19px;}
 
 /* sliding panel */
 #toppanel {
     position: absolute;   /*Panel will overlap  content */
-    /*position: relative;*/   /*Panel will "push" the content down */
+    /*position: relative;*   /*Panel will "push" the content down */
     top: 0;
+	left: 0; /* IE 6,7 fix */
     width: 100%;
     z-index: 999;
     text-align: center;
