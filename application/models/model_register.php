@@ -52,6 +52,27 @@ class Model_register extends CI_Model {
         
 	 return true;
     }
+    
+    public function save_from_panel( $arr, $autologin = FALSE)
+    {
+		echo 4;
+        $email = $arr['email'];
+        $password =$arr['password'];
+        var_dump($email.'--------');
+        $data = array(
+            'email' => $email,
+            'password' => md5($password),
+            'priority' => 1
+        );
+        $this->db->insert('users', $data);
+        
+        if($autologin == TRUE)
+        {	
+            $this->load->model('Model_login');
+            $this->Model_login->login( $email, $password);
+	}
+        return true;     
+    }
 }
 
 ?>

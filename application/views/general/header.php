@@ -1,7 +1,8 @@
 <!DOCTYPE html>
+
 <html>
 	<head>
-
+                
 		<title>EXO.bg - Exoatmospheric website for successful business</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<link href="/css/styles.css" rel="stylesheet" type="text/css" media="all" />
@@ -24,29 +25,11 @@
 		<div class="left">
                     <h1>Здравей!</h1>
 		</div>    
-	        <div class="left">
-		<!-- Login Form -->
-                    <form class="clearfix" action="" method="post">
-			<h1>Потребителски вход!</h1>
-					
-			<label class="grey" for="username">Имейл:</label>
-			<input class="field" type="text" name="email" id="email" value="" size="23" />
-			<label class="grey" for="password">Парола:</label>
-			<input class="field" type="password" name="password" id="password" size="23" />
-	           
-        		<div class="clear"></div>
-			<input type="submit" name="submit" value="Login" class="bt_login" />
-		    </form>
-		</div>
-		<div class="left right">			
-		<!-- Register Form -->
-		  <form action="" method="post">
-                    <h1>Регистрация:</h1>		
-                    <label class="grey" for="email">Имейл:</label>
-		    <input class="field" type="text" name="email" id="email" size="23" />
-		    <input type="submit" name="submit" value="Register" class="bt_register" />
-		  </form>
-		</div>
+	        <?php include ('panel_login.php'); ?>
+                
+                <?php include ('panel_register.php'); ?>
+
+                
 
             
 <!--            <div class="left">
