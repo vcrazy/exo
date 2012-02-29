@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
 	<head>
 		<title>EXO.bg - Exoatmospheric website for successful business</title>
@@ -14,46 +15,14 @@
 		<script type="text/javascript" src="/js/script.js"></script>
 	</head>
 	<body>
-		<div id="toppanel">
+        <div id="toppanel">
 			<div id="panel">
 				<div class="content clearfix">
 					<div class="left">
 						<h1>Здравей!</h1>
 					</div>    
-					<div class="left">
-					<!-- Login Form -->
-						<form class="clearfix" action="" method="post">
-							<h1>Потребителски вход!</h1>
-
-							<label class="grey" for="username">Имейл:</label>
-							<input class="field" type="text" name="email" id="email" value="" size="23" />
-							<label class="grey" for="password">Парола:</label>
-							<input class="field" type="password" name="password" id="password" size="23" />
-
-							<div class="clear"></div>
-							<input type="submit" name="submit" value="Login" class="bt_login" />
-						</form>
-					</div>
-					<div class="left right">			
-					<!-- Register Form -->
-						<form action="" method="post">
-							<h1>Регистрация:</h1>		
-							<label class="grey" for="email">Имейл:</label>
-							<input class="field" type="text" name="email" id="email" size="23" />
-							<input type="submit" name="submit" value="Register" class="bt_register" />
-						</form>
-					</div>
-				<!--            <div class="left">
-
-				<h1>Members panel</h1>
-
-				<p>You can put member-only data here</p>
-				<a href="registered.php">View a special member page</a>
-				<p>- or -</p>
-				<a href="?logoff">Log off</a>
-
-				</div>-->
-
+					<?php include ('panel_login.php'); ?>
+					<?php include ('panel_register.php'); ?>
 					<div class="left right"></div>
 				</div>
 			</div>
