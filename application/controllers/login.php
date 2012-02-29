@@ -11,6 +11,7 @@ class Login extends MY_Controller
         if($result == true)
         {
             redirect('/homepage?success=login');
+			
         }
         else
             {
