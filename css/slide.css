@@ -24,21 +24,19 @@ Version: 1.0
 
 /* Panel Tab/button */
 .tab {
-  	background: url(../images/panel/tab_b.png) repeat-x 0 0;
-	height: 42px;
-/*  	background: url(/images/panel/tab_b.png) repeat-x 0 0;
-	height: 7px;*/
+  	background: url(/images/panel/tab_b.png) repeat-x 0 0;
+	height: 7px;
 	position: relative;
-        top: 0;
+    top: 0;
 }
 
-.tab ul.login {
-	display: inline block;
+ul.login {
+	display: block;
 	position: relative;
   	float: left;
   	clear: left;
   	height: 42px;
-	width: 250px;
+	width: auto;
   	font-weight: bold;
 	line-height: 42px;
 	margin: 0;

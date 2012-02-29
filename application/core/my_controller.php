@@ -26,6 +26,7 @@ class MY_Controller extends CI_Controller
 		$this->data['selected_menu'] = $this->uri->rsegment(1);
 		
 		$this->set_menu_titles();
+                $this->data['checklogin'] = $this->is_logged();
 	}
 
 	protected function load_view($view_name = 'main_template_view')

@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
 	<head>
 		<title>EXO.bg - Exoatmospheric website for successful business</title>
@@ -9,7 +8,6 @@
 		<script type="text/javascript" src="/js/jquery.min.js"></script>
 		<script type="text/javascript" src="/js/jquery.validate.min.js"></script>
 		<script type="text/javascript" src="/js/ckeditor/ckeditor.js"></script>
-
 		<script type="text/javascript" src="/js/ckeditor/adapters/jquery.js"></script>
 		<script type="text/javascript" src="/js/exo.js"></script>
 		<script type="text/javascript" src="/js/slide.js"></script>
@@ -21,9 +19,19 @@
 				<div class="content clearfix">
 					<div class="left">
 						<h1>Здравей!</h1>
-					</div>    
-					<?php include ('panel_login.php'); ?>
-					<?php include ('panel_register.php'); ?>
+					</div>
+                                    <?php  if ($checklogin)
+                                            {
+                                              echo 'da';
+                                              include ('panel_login.php');
+                                              include ('panel_register.php');
+                                            }
+                                           else
+                                           {
+                                               include('/../user_control/afterlogin.php');
+                                           }
+                                    ?>     
+                                     
 					<div class="left right"></div>
 				</div>
 			</div>
@@ -41,9 +49,10 @@
 					</li>
 					<li class="right">&nbsp;</li>
 				</ul>
-					<?php include('menu.php'); ?>
+				<?php include('menu.php'); ?>
 			</div>
-		</div> <!--panel -->
+		</div> 
+            <!--panel -->
 
 		<div id="head">
 			<div id="head_cen">
@@ -57,4 +66,3 @@
 				</div>
 			</div>
 		</div>
-		
