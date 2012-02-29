@@ -22,12 +22,13 @@
 					</div>
                                     <?php  if ($checklogin)
                                             {
-                                              echo 'da';
+                                              echo 'ne';
                                               include ('panel_login.php');
                                               include ('panel_register.php');
                                             }
                                            else
                                            {
+                                               echo  'da';
                                                include('/../user_control/afterlogin.php');
                                            }
                                     ?>     

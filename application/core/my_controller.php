@@ -9,7 +9,8 @@ class MY_Controller extends CI_Controller
 		parent::__construct();
 
 		$this->register();
-
+                $this->get_userwebsites();
+                
 		$this->data['session'] = $this->session->all_userdata(); // put all the information we have in the session
 
 		$this->data['uri'] = array(
@@ -27,6 +28,11 @@ class MY_Controller extends CI_Controller
 		
 		$this->set_menu_titles();
                 $this->data['checklogin'] = $this->is_logged();
+                
+//                $websites=$this->get_userwebsites();
+//                var_dump($websites);
+//                if( empty($websites) ) $websites[]='Нямате сайтове';
+//                $this->data['websites']=$websites;
 	}
 
 	protected function load_view($view_name = 'main_template_view')
@@ -87,4 +93,13 @@ class MY_Controller extends CI_Controller
                          //  $this->load_view();
                     }
          }
+         public function get_userwebsites()
+         {
+             $user_id=$this->session->userdata('id');
+             $this->load->model("Model_interface");
+             $websites=$this->Model_interface->get_websites($user_id);
+             $this->data['websites'] = $websites;
+             
+         }
+
 }
