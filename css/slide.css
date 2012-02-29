@@ -25,19 +25,19 @@ Version: 1.0
 /* Panel Tab/button */
 .tab {
   	background: url(../images/panel/tab_b.png) repeat-x 0 0;
-	height: 42px;
+	height: 40px;
 	position: relative;
     top: 0;
     z-index: 999;
 }
 
 .tab ul.login {
-	display: block;
+	display: inline block;
 	position: relative;
   	float: left;
   	clear: left;
   	height: 42px;
-	width: auto;
+	width: 250px;
   	font-weight: bold;
 	line-height: 42px;
 	margin: 0;

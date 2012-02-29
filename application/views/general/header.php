@@ -27,7 +27,7 @@
 	        <div class="left">
 		<!-- Login Form -->
                     <form class="clearfix" action="" method="post">
-			<h1>Потребителски вход!</h1>
+			<h1>Потребителски вход:</h1>
 					
 			<label class="grey" for="username">Имейл:</label>
 			<input class="field" type="text" name="email" id="email" value="" size="23" />
@@ -41,7 +41,8 @@
 		<div class="left right">			
 		<!-- Register Form -->
 		  <form action="" method="post">
-                    <h1>Регистрация:</h1>		
+                    <h1>Регистрация:</h1>
+                    
                     <label class="grey" for="email">Имейл:</label>
 		    <input class="field" type="text" name="email" id="email" size="23" />
 		    <input type="submit" name="submit" value="Register" class="bt_register" />
@@ -67,8 +68,8 @@
 	 <div class="tab">
             <ul class="login">
 	       <li class="left">&nbsp;</li>
-	       <li>Здравей !</li>
-               <li class="sep">|</li>
+	       <!--<li>Здравей !</li>
+               <li class="sep"></li> -->
                <li id="toggle">
                     <a id="open" class="open" href="#">Отвори панела</a>
                     <a id="close" style="display: none;" class="close" href="#">Затвори панела</a>			
