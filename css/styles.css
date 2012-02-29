@@ -14,12 +14,12 @@ li											{list-style:none}
 h1.logo										{width:980px; float:left; color: #31a1ff; height:50px; margin-top: 50px;}
 h1.logo a.site_title, h1.logo a.site_title:visited		{display:inline-block; height:36px; float: left; color: #31a1ff;}
 h1.logo a#site_slogan, h1.logo a#site_slogan:visited	{color: white; font-size: 11pt; float: left; margin-top: 10px;}
-#head menu									{height:44px; margin-top:8px; float:right}
-#head menu li								{width:auto; margin-left:1px; float:left; font-family:Arial, Helvetica, sans-serif; font-size:13px; color:#5f5f5f; line-height:35px; text-transform:uppercase}
-#head menu li:first-child					{margin:0}
-#head menu li	a,#head menu li a.active	{width:auto; height:42px; padding:0 23px; float:left; color:inherit; background:#252525}
-#head menu li a.not-active			{width:auto; height:42px; padding:0 23px; float:left; color:#5f5f5f; background:#252525}
-#head menu li	a:hover,#head menu li a.active	{color:#31a1ff; background:#272727}
+menu									{height:44px; margin-top:8px; float:right}
+menu li								{width:auto; margin-left:1px; float:left; font-family:Arial, Helvetica, sans-serif; font-size:13px; color:#5f5f5f; line-height:35px; text-transform:uppercase}
+menu li:first-child					{margin:0}
+menu li	a, menu li a.active	{width:auto; height:42px; padding:0 23px; float:left; color:inherit; background:#252525}
+menu li a.not-active			{width:auto; height:42px; padding:0 23px; float:left; color:#5f5f5f; background:#252525}
+menu li	a:hover, menu li a.active	{color:#31a1ff; background:#272727}
 
 #content									{width:100%; padding-bottom:36px; float:left; background:#ffffff url(/images/contentBg.png) repeat-x}
 #content_cen								{width:980px; margin:0 auto}

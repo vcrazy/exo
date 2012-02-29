@@ -1,21 +1,17 @@
 <!DOCTYPE html>
 <html>
 	<head>
-
 		<title>EXO.bg - Exoatmospheric website for successful business</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<link href="/css/styles.css" rel="stylesheet" type="text/css" media="all" />
+		<link rel="stylesheet" type="text/css" href="/css/slide.css" media="all" />
 		<script type="text/javascript" src="/js/jquery.min.js"></script>
 		<script type="text/javascript" src="/js/jquery.validate.min.js"></script>
 		<script type="text/javascript" src="/js/ckeditor/ckeditor.js"></script>
-                
-                <link rel="stylesheet" type="text/css" href="/css/slide.css" media="all" />
-                 <script type="text/javascript" src="/js/slide.js"></script>
-                 
 		<script type="text/javascript" src="/js/ckeditor/adapters/jquery.js"></script>
 		<script type="text/javascript" src="/js/exo.js"></script>
-		<script type="text/javascript" src="/js/script.js"></script>		
-
+		<script type="text/javascript" src="/js/slide.js"></script>
+		<script type="text/javascript" src="/js/script.js"></script>
 	</head>
 	<body>
 		<div id="toppanel">
@@ -75,13 +71,13 @@
 					</li>
 					<li class="right">&nbsp;</li>
 				</ul>
+					<?php include('menu.php'); ?>
 			</div>
 		</div> <!--panel -->
 
 		<div id="head">
 			<div id="head_cen">
 				<div id="head_sup" class="head_pad">
-					<?php include('menu.php'); ?>
 					<h1 class="logo">
 						<a href="/" class="site_title">EXO.bg</a><br />
 						<a href="/" id="site_slogan">
