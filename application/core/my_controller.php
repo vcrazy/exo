@@ -8,6 +8,8 @@ class MY_Controller extends CI_Controller
 	{
 		parent::__construct();
 
+		$this->register();
+
 		$this->data['session'] = $this->session->all_userdata(); // put all the information we have in the session
 
 		$this->data['uri'] = array(
@@ -54,4 +56,34 @@ class MY_Controller extends CI_Controller
 				break;
 		}
 	}
+        
+        public function register()
+        {
+            $this->load->helper(array('form', 'url'));
+            $this->load->library('form_validation');
+            
+             if( !empty($_POST) && !empty($_POST['register']))
+                    {
+                        $this->form_validation->set_rules('email', 'Email', 'required|valid_emails|is_unique[users.email]');
+                        $this->form_validation->set_rules('password', 'Password', 'required|matches[conf_pass]');
+                        $this->form_validation->set_rules('conf_pass', 'Confirm Password', 'required');
+                        if ($this->form_validation->run() != FALSE)
+                            {   
+							echo 1;
+                                $email=$_POST['email'];
+                                $password=$_POST['password'];
+                                $arr= array(
+                                    'email'    => $email, 
+                                    'password' => $password
+                                    );
+                                    $this->load->model("Model_register");
+									echo 2;
+                                    $this->Model_register->save_from_panel($arr, TRUE);
+									echo 3;
+                            }
+                            
+                            
+                         //  $this->load_view();
+                    }
+         }
 }
