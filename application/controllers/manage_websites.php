@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Homepage extends MY_Controller // extends our controller - see it in the 'core' folder
+class Manage_websites extends MY_Controller // extends our controller - see it in the 'core' folder
 {
 	protected $data; // comes from MY_Controller but see it here to know we have it and should use it!
 
