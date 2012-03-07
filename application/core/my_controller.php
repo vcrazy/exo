@@ -42,7 +42,7 @@ class MY_Controller extends CI_Controller
 
 	public function is_logged()
 	{
-		return (bool)$this->session->userdata('user_id');
+		return (bool)$this->session->userdata('id');
 	}
 	
 	public function set_menu_titles()
