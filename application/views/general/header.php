@@ -20,15 +20,15 @@
 					<div class="left">
 						<h1>Здравей!</h1>
 					</div>
-                                    <?php  if ($checklogin)
+                                    <?php  if ( ( $checklogin == FALSE ) || ( empty($checklogin) ) )
                                             {
-                                              echo 'ne';
-                                              include ('panel_login.php');
-                                              include ('panel_register.php');
+                                              echo 'da';
+                                               include ('panel_login.php');
+                                               include ('panel_register.php');
                                             }
                                            else
                                            {
-                                               echo  'da';
+                                               echo  'ne';
                                                include('/../user_control/afterlogin.php');
                                            }
                                     ?>     

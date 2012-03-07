@@ -49,11 +49,5 @@ class Model_login extends CI_Model {
 
 	}
 
-	public function logout() {		
-
-		//Destroy session
-		$this->session->sess_destroy();
-                          }
-
 }
 ?>
