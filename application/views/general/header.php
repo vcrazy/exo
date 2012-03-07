@@ -17,20 +17,18 @@
         <div id="toppanel">
 			<div id="panel">
 				<div class="content clearfix">
-						
-                                    <?php  if ($checklogin)
-                                            {
-                                              echo 'da';
-											  include ('panel_start.php');
-                                              include ('panel_login.php');
-                                              include ('panel_register.php');
-                                            }
-                                           else
-                                           {
-                                               include('/../user_control/afterlogin.php');
-                                           }
-                                    ?>     
-                                     
+
+					<?php
+					if (( $checklogin == FALSE ) || ( empty($checklogin) )) {
+						echo 'da';
+						include ('panel_login.php');
+						include ('panel_register.php');
+					} else {
+						echo 'ne';
+						include('/../user_control/afterlogin.php');
+					}
+					?>
+
 					<div class="left right"></div>
 				</div>
 			</div>
@@ -48,10 +46,10 @@
 					</li>
 					<li class="right">&nbsp;</li>
 				</ul>
-				<?php include('menu.php'); ?>
+<?php include('menu.php'); ?>
 			</div>
 		</div> 
-            <!--panel -->
+		<!--panel -->
 
 		<div id="head">
 			<div id="head_cen">
