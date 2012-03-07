@@ -17,18 +17,22 @@
         <div id="toppanel">
 			<div id="panel">
 				<div class="content clearfix">
-
-					<?php
-					if (( $checklogin == FALSE ) || ( empty($checklogin) )) {
-						echo 'da';
-						include ('panel_login.php');
-						include ('panel_register.php');
-					} else {
-						echo 'ne';
-						include('/../user_control/afterlogin.php');
-					}
-					?>
-
+					<div class="left">
+						<h1>Здравей!</h1>
+					</div>
+                                    <?php  if ( ( $checklogin == FALSE ) || ( empty($checklogin) ) )
+                                            {
+                                              echo 'da';
+                                               include ('panel_login.php');
+                                               include ('panel_register.php');
+                                            }
+                                           else
+                                           {
+                                               echo  'ne';
+                                               include('/../user_control/afterlogin.php');
+                                           }
+                                    ?>     
+                                     
 					<div class="left right"></div>
 				</div>
 			</div>

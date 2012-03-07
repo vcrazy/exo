@@ -89,10 +89,10 @@ class MY_Controller extends CI_Controller
 									echo 3;
                             }
                             
-                            
                          //  $this->load_view();
                     }
          }
+         
          public function get_userwebsites()
          {
              $user_id=$this->session->userdata('id');

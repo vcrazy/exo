@@ -1,7 +1,19 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class User_inteface extends MY_Controller // extends our controller - see it in the 'core' folder
+class User_interface extends MY_Controller // extends our controller - see it in the 'core' folder
 {
+        public function manage()
+        {
+            $this->data['view'] = 'user_control/manage_full';
+            $this->load->model('Model_interface');
+            $user_id = $this->session->userdata('id');
+            #var_dump($this->session->all_userdata());
+            $checklogin = $this->is_logged();
+            $this->data['checklogin'] = $checklogin;
+            $websites = $this->Model_interface->get_websites($user_id);
+            $this->data['websites'] = $websites;
+            $this->load_view();
+        }
 	public function add_website1()
 	{
 		$this->data['view'] = 'user_interface/user_interfaces_view'; 
