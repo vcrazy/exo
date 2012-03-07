@@ -17,12 +17,11 @@
         <div id="toppanel">
 			<div id="panel">
 				<div class="content clearfix">
-					<div class="left">
-						<h1>Здравей!</h1>
-					</div>
+						
                                     <?php  if ($checklogin)
                                             {
                                               echo 'da';
+											  include ('panel_start.php');
                                               include ('panel_login.php');
                                               include ('panel_register.php');
                                             }
