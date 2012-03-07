@@ -20,7 +20,7 @@
 					<div class="left">
 						<h1>Здравей!</h1>
 					</div>
-                                    <?php  if ( ( $checklogin == FALSE ) || ( empty($checklogin) ) )
+                                    <?php  if (  $checklogin == FALSE  )
                                             {
                                               echo 'da';
                                                include ('panel_login.php');
@@ -50,10 +50,10 @@
 					</li>
 					<li class="right">&nbsp;</li>
 				</ul>
-				<?php include('menu.php'); ?>
+<?php include('menu.php'); ?>
 			</div>
 		</div> 
-            <!--panel -->
+		<!--panel -->
 
 		<div id="head">
 			<div id="head_cen">

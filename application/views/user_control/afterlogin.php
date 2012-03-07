@@ -9,7 +9,16 @@
                 echo '<li>'.$i.'. <b>'.$website['site_name'].'</b></li>';
                 $i++;
             }
-        ?>
-                 </ul>
-                <div class="clear"></div>
+        ?>		
+
+                 </ul> 
+			<form action="/login/logout" method="post">
+				Logout:	<input type="submit" name="Logout" value="Излез" class="bt_login"/>
+			</form>
+                <div class="clear">
+				</div>
           </div>
+		  
+
+
+
