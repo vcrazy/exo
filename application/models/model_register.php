@@ -17,10 +17,18 @@ class Model_register extends CI_Model {
             'email' => $email,
             'password' => md5($password),
             'priority' => $priority
-//            'domain' => $domain
         );
         $this->db->insert('users', $data);
         $user_id = $this->db->insert_id();
+        
+        $data=date("Y-m-d H:i:s");
+        $change = array(
+                'user_id' => $user_id,
+                'change_date' => $data,
+                'description'=>'Вие създадохте нов aкаунт'
+                );
+        $this->db->insert('changes',$change);
+        
         $site = array(
             'site_name' => $site_name, 
             'user_id' => $user_id,
@@ -38,7 +46,6 @@ class Model_register extends CI_Model {
             'page_num' => $count,
             'page_content' => $page1,
             'site_id' => $site_id
-//            'user_id' => $user_id
             );
                     
             $this->db->insert('pages', $page);
@@ -58,7 +65,6 @@ class Model_register extends CI_Model {
 		echo 4;
         $email = $arr['email'];
         $password =$arr['password'];
-        var_dump($email.'--------');
         $data = array(
             'email' => $email,
             'password' => md5($password),
