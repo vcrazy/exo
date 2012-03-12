@@ -22,7 +22,9 @@
 	            <h2>Последни събития</h2>
 	        </div>
 	        <div id="tab_content_3" class="single_content">
-	            <h2>Профил</h2>
+	            <h2>Профил</h2> <br /> <br />
+				<?php include (APPPATH.'/views/site/ch_pass.php'); ?>
+				
 	        </div>
 	        <div id="tab_content_4" class="single_content">
 	            <h2>Нещо друго</h2>	            
