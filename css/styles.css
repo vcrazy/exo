@@ -40,3 +40,42 @@ h3											{width:auto; float:left; font-family:Arial, Helvetica, sans-serif; 
 #foot p	a, #foot p	a:visited				{color:white;}
 
 textarea {width: 350px; height: 120px;}
+
+.changeover {
+    transition: all 5.0s ease-in-out;
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    border:#999 1px solid;
+    outline:none;
+    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+    -webkit-box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+    -moz-box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+}
+
+#plans {float:left;}
+.plan {float:left; width:300px; margin:5px; height:300px; }
+.shadow{
+-moz-box-shadow: -5px -5px 5px #888;
+-webkit-box-shadow: -5px -5px 5px #888;
+box-shadow: -5px -5px 5px #888;
+}
+#plan_first {}
+#plan_middle {}
+#plan_last {}
+#plan_head{background:url(/images/headBg.png) repeat-x; text-align: center; color:white; font-size:22px; padding:10px 0 10px 0;}
+.plan ul {margin:0 24px 0 8px; list-style:none;}
+.plan li {font-size:11px; color:#808080;}
+.plan li span.tip {display:block; font-size:13px; width:100%; padding:8px; cursor:pointer;}
+
+
+
+.container {width: 100%;}
+ul.navi {float: left; height: 28px; border-bottom: 1px solid #ccc; border-left: 1px solid #ccc; width: 100%;}
+ul.navi li {float: left; height: 27px; line-height: 26px; border: 1px solid #ccc; border-left: none; margin: 0 0 -1px; background:url(/images/headBg.png) repeat-x; overflow: hidden;}
+ul.navi li a {text-decoration: none; color: #fff; display: block; font-size: 15px; font-weight:700; padding: 0 20px; border: 1px solid #fff;}
+ul.navi li a:hover {background: #B9B0AC;}
+ul.navi li.active a {color:#000;}
+ul.navi li.active, ul.navi li.active a:hover {background: #fff; border-bottom: 1px solid #fff;}
+.contenttab {border: 1px solid #ccc; border-top: none; clear: both; float: left; width: 100%; height:300px; background: #fff;}
+.single_content {padding: 20px; font-size: 1.2em;}
+.single_content h2 {color:#B9B0AC; font-weight: normal; padding-bottom: 10px; font-size: 20px;}
