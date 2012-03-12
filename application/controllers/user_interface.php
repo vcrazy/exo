@@ -2,7 +2,7 @@
 
 class User_interface extends MY_Controller // extends our controller - see it in the 'core' folder
 {
-        public function manage()
+   public function manage()
         {
             $this->data['view'] = 'user_control/manage_full';
             $this->load->model('Model_interface');
