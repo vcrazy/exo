@@ -39,7 +39,37 @@ $(document).ready(function(){
 			email: "Please enter a valid email address"
 		}
 	});
+        
+        $(".plan").mouseover(function(){
+    	$(this).removeClass().addClass("plan changeover");
+        }).mouseout(function(){
+            $(this).removeClass().addClass("plan shadow");		
+        }); 
 	
+        // За табовете        
+	$('.single_content').hide();
+	$('.navi li:first').addClass('active');
+	$('.single_content:first').show();
+
+	$('.navi li').click(function() {
+		$('.navi li').removeClass('active');
+		$(this).addClass('active');
+		$('.single_content').hide();
+		var activeTab = $(this).find('a').attr('href');
+		$(activeTab).fadeIn(500);
+	});
+
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
 	$("#contactform").validate({
 		rules: {
 			name: "required",

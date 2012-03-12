@@ -9,7 +9,8 @@ class MY_Controller extends CI_Controller
 		parent::__construct();
 
 		$this->register();
-
+                $this->get_userwebsites();
+                
 		$this->data['session'] = $this->session->all_userdata(); // put all the information we have in the session
 
 		$this->data['uri'] = array(
@@ -26,6 +27,12 @@ class MY_Controller extends CI_Controller
 		$this->data['selected_menu'] = $this->uri->rsegment(1);
 		
 		$this->set_menu_titles();
+                $this->data['checklogin'] = $this->is_logged();
+                
+//                $websites=$this->get_userwebsites();
+//                var_dump($websites);
+//                if( empty($websites) ) $websites[]='Нямате сайтове';
+//                $this->data['websites']=$websites;
 	}
 
 	protected function load_view($view_name = 'main_template_view')
@@ -35,7 +42,7 @@ class MY_Controller extends CI_Controller
 
 	public function is_logged()
 	{
-		return (bool)$this->session->userdata('user_id');
+		return (bool)$this->session->userdata('id');
 	}
 	
 	public function set_menu_titles()
@@ -67,14 +74,14 @@ class MY_Controller extends CI_Controller
                         $this->form_validation->set_rules('email', 'Email', 'required|valid_emails|is_unique[users.email]');
                         $this->form_validation->set_rules('password', 'Password', 'required|matches[conf_pass]');
                         $this->form_validation->set_rules('conf_pass', 'Confirm Password', 'required');
-                        if ($this->form_validation->run() != FALSE)
+						if ($this->form_validation->run() != FALSE)
                             {   
 							echo 1;
                                 $email=$_POST['email'];
                                 $password=$_POST['password'];
                                 $arr= array(
                                     'email'    => $email, 
-                                    'password' => $password
+                                    'password' => $password,
                                     );
                                     $this->load->model("Model_register");
 									echo 2;
@@ -82,8 +89,17 @@ class MY_Controller extends CI_Controller
 									echo 3;
                             }
                             
-                            
                          //  $this->load_view();
                     }
          }
+         
+         public function get_userwebsites()
+         {
+             $user_id=$this->session->userdata('id');
+             $this->load->model("Model_interface");
+             $websites=$this->Model_interface->get_websites($user_id);
+             $this->data['websites'] = $websites;
+             
+         }
+
 }

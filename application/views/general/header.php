@@ -30,9 +30,20 @@
 				<div class="content clearfix">
 					<div class="left">
 						<h1>Здравей!</h1>
-					</div>    
-					<?php include ('panel_login.php'); ?>
-					<?php include ('panel_register.php'); ?>
+					</div>
+                                    <?php  if (  $checklogin == FALSE  )
+                                            {
+                                              echo 'da';
+                                               include ('panel_login.php');
+                                               include ('panel_register.php');
+                                            }
+                                           else
+                                           {
+                                               echo  'ne';
+                                               include('/../user_control/afterlogin.php');
+                                           }
+                                    ?>     
+                                     
 					<div class="left right"></div>
 				</div>
 			</div>
@@ -52,7 +63,8 @@
 				</ul>
 				<?php include('menu.php'); ?>
 			</div>
-		</div> <!--panel -->
+		</div> 
+		<!--panel -->
 
 		<div id="head">
 			<div id="head_cen">
