@@ -15,8 +15,8 @@
 			<form action="/login/logout" method="post">
 				Logout:	<input type="submit" name="Logout" value="Излез" class="bt_login"/>
 			</form>
-                <div class="clear">
-				</div>
+                <div class="clear"></div>
+                <a href="/user_interface/manage">Контрол</a>
           </div>
 		  
 
