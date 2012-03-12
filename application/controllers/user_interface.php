@@ -12,8 +12,31 @@ class User_interface extends MY_Controller // extends our controller - see it in
             $this->data['checklogin'] = $checklogin;
             $websites = $this->Model_interface->get_websites($user_id);
             $this->data['websites'] = $websites;
-            $this->load_view();
             
+            if( !empty($_POST)  )
+            {
+               $this->form_validation->set_rules('pass', 'Email', 'required|valid_emails|is_unique[users.email]');
+               $this->form_validation->set_rules('n_pass', 'Password', 'required|matches[r_pass]');
+               $this->form_validation->set_rules('r_pass', 'Confirm Password', 'required');
+               if ($this->form_validation->run() != FALSE)
+                 {
+                    $pass = $this->input->post('pass');
+                    $n_password = $this->input->post('n_pass');
+                    $r_password = $this->input->post('r_pass');
+                    $arr= array(
+                        'pass'    => $pass, 
+                        'n_pass' => $n_password,
+                        'user' => $user_id
+                               );
+                    
+                    $this->load->model("Model_interface");
+                    $this->Model_interface->change_user_pass($arr);
+                 }
+               
+            }
+            
+            $this->load_view();
+           
         }
 	public function add_website1()
 	{
