@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
 	<head>
 		<title>EXO.bg - Exoatmospheric website for successful business</title>
@@ -13,6 +12,17 @@
 		<script type="text/javascript" src="/js/exo.js"></script>
 		<script type="text/javascript" src="/js/slide.js"></script>
 		<script type="text/javascript" src="/js/script.js"></script>
+		<script type="text/javascript">
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-29965937-1']);
+			_gaq.push(['_setDomainName', 'exo.bg']);
+			_gaq.push(['_trackPageview']);
+			(function() {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+		</script>
 	</head>
 	<body>
         <div id="toppanel">
@@ -40,7 +50,7 @@
 					</li>
 					<li class="right">&nbsp;</li>
 				</ul>
-					<?php include('menu.php'); ?>
+				<?php include('menu.php'); ?>
 			</div>
 		</div> <!--panel -->
 
@@ -56,4 +66,3 @@
 				</div>
 			</div>
 		</div>
-		
