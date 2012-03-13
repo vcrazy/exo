@@ -21,23 +21,23 @@ class Model_register extends CI_Model {
         $this->db->insert('users', $data);
         $user_id = $this->db->insert_id();
         
-        $data=date("Y-m-d H:i:s");
-        $change = array(
-                'user_id' => $user_id,
-                'change_date' => $data,
-                'description'=>'Вие създадохте нов aкаунт'
-                );
-        $this->db->insert('changes',$change);
+//        $data=date("Y-m-d H:i:s");
+//        $change = array(
+//                'user_id' => $user_id,
+//                'change_date' => $data,
+//                'description'=>'Вие създадохте нов aкаунт'
+//                );
+//        $this->db->insert('changes',$change);
         
         $site = array(
             'site_name' => $site_name, 
             'user_id' => $user_id,
-            'site_url' => $domain.'.exo.bg',
             'template_id' => $template,
             'domain' => $domain
         );
         $this->db->insert('sites', $site);
         $site_id = $this->db->insert_id();
+        
         $count = 0;
         foreach ($nextpage as $page1) {
             $count++;
@@ -62,7 +62,6 @@ class Model_register extends CI_Model {
     
     public function save_from_panel( $arr, $autologin = FALSE)
     {
-		echo 4;
         $email = $arr['email'];
         $password =$arr['password'];
         $data = array(

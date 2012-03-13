@@ -74,7 +74,7 @@ class MY_Controller extends CI_Controller
                         $this->form_validation->set_rules('email', 'Email', 'required|valid_emails|is_unique[users.email]');
                         $this->form_validation->set_rules('password', 'Password', 'required|matches[conf_pass]');
                         $this->form_validation->set_rules('conf_pass', 'Confirm Password', 'required');
-						if ($this->form_validation->run() != FALSE)
+			if ($this->form_validation->run() != FALSE)
                             {   
 							echo 1;
                                 $email=$_POST['email'];

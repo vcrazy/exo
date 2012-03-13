@@ -24,6 +24,15 @@ class Model_interface extends CI_Model{
 		}
 	    return $arr;
         }
+        public function change_user_pass($arr)
+        {
+           $old_pass = $arr['pass'];
+           $new_pass = $arr['n_pass'];
+           
+           $this->db->select('site_id,site_name');
+           $this->db->from('users');
+           $this->db->where('password', $old_pass);
+        }
 
 }
 
