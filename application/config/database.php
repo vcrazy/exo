@@ -1,5 +1,6 @@
 
 
+
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 /*
 | -------------------------------------------------------------------
@@ -56,7 +57,12 @@ $db['default']['username'] = 't3stovet_exouser';
 $db['default']['password'] = 'VKDNw{FMd_Q%';
 $db['default']['database'] = 't3stovet_exo';
 
+if($_SERVER['SERVER_NAME'] === 'exo.bg')
+{
+	$db['default']['hostname'] = 'localhost';
+}
 
+// if running with local database server uncomment the lines below
 //$db['default']['hostname'] = 'localhost';
 //$db['default']['username'] = 'root';
 //$db['default']['password'] = '';
