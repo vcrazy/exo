@@ -9,8 +9,8 @@ class MY_Controller extends CI_Controller
 		parent::__construct();
 
 		$this->register();
-                $this->get_userwebsites();
-                
+		$this->get_userwebsites();
+
 		$this->data['session'] = $this->session->all_userdata(); // put all the information we have in the session
 
 		$this->data['uri'] = array(
@@ -27,8 +27,8 @@ class MY_Controller extends CI_Controller
 		$this->data['selected_menu'] = $this->uri->rsegment(1);
 		
 		$this->set_menu_titles();
-                $this->data['checklogin'] = $this->is_logged();
-                
+		$this->data['checklogin'] = $this->is_logged();
+
 //                $websites=$this->get_userwebsites();
 //                var_dump($websites);
 //                if( empty($websites) ) $websites[]='Нямате сайтове';
