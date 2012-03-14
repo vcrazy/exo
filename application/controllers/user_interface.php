@@ -4,6 +4,8 @@ class User_interface extends MY_Controller // extends our controller - see it in
 {
    public function manage()
         {
+           if ( $this->session->userdata('id') )
+           {
             $this->data['view'] = 'user_control/manage_full';
             $this->load->model('Model_interface');
             $user_id = $this->session->userdata('id');
@@ -14,8 +16,8 @@ class User_interface extends MY_Controller // extends our controller - see it in
             $this->data['websites'] = $websites;
             
             if( !empty($_POST)  )
-            {
-               $this->form_validation->set_rules('pass', 'Email', 'required|valid_emails|is_unique[users.email]');
+            {  
+               $this->form_validation->set_rules('pass', 'Password', 'required');
                $this->form_validation->set_rules('n_pass', 'Password', 'required|matches[r_pass]');
                $this->form_validation->set_rules('r_pass', 'Confirm Password', 'required');
                if ($this->form_validation->run() != FALSE)
@@ -28,7 +30,6 @@ class User_interface extends MY_Controller // extends our controller - see it in
                         'n_pass' => $n_password,
                         'user' => $user_id
                                );
-                    
                     $this->load->model("Model_interface");
                     $this->Model_interface->change_user_pass($arr);
                  }
@@ -36,7 +37,7 @@ class User_interface extends MY_Controller // extends our controller - see it in
             }
             
             $this->load_view();
-           
+           }
         }
 	public function add_website1()
 	{

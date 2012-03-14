@@ -21,13 +21,13 @@ class Model_register extends CI_Model {
         $this->db->insert('users', $data);
         $user_id = $this->db->insert_id();
         
-//        $data=date("Y-m-d H:i:s");
-//        $change = array(
-//                'user_id' => $user_id,
-//                'change_date' => $data,
-//                'description'=>'Вие създадохте нов aкаунт'
-//                );
-//        $this->db->insert('changes',$change);
+        $data=date("Y-m-d H:i:s");
+        $change = array(
+                'user_id' => $user_id,
+                'change_date' => $data,
+                'description'=>'Вие създадохте нов aкаунт'
+                );
+        $this->db->insert('changes',$change);
         
         $site = array(
             'site_name' => $site_name, 
@@ -67,7 +67,7 @@ class Model_register extends CI_Model {
         $data = array(
             'email' => $email,
             'password' => md5($password),
-            'priority' => 1
+            'priority' => '1'
         );
         $this->db->insert('users', $data);
         
