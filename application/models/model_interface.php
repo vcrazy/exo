@@ -28,10 +28,30 @@ class Model_interface extends CI_Model{
         {
            $old_pass = $arr['pass'];
            $new_pass = $arr['n_pass'];
+           $user_id = $arr['user'];
            
-           $this->db->select('site_id,site_name');
-           $this->db->from('users');
-           $this->db->where('password', $old_pass);
+//           $this->db->select('id,password');
+//           $this->db->from('users');
+//           $this->db->where('id', $user_id);
+//           $this->db->where('password', md5($old_pass));
+//           $query = $this->db->get();
+           
+//           if ($query->result())
+//           {
+             $data = array(
+              'password' => md5($new_pass)
+                );
+            $this->db->where('id', $user_id);
+            $this->db->where('password', md5($old_pass));
+            $query = $this->db->update('users',$data);
+//            if ($query->result())
+//            {
+                echo $query;
+//            }
+//           else
+//           {
+//               echo 'ne';
+//           }    
         }
 
 }
