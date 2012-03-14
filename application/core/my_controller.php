@@ -18,21 +18,16 @@ class MY_Controller extends CI_Controller
 			'method' => $this->router->fetch_method()
 		);
 
+		$this->data['selected_menu'] = $this->uri->rsegment(1);
+
+		$this->set_menu_titles();
+		$this->data['checklogin'] = $this->is_logged();
+
 		$this->load->model('Model_admin');
 		$all_menus = $this->Model_admin->get_menus();
 		$this->data['menus'] = $all_menus; 
 		$all_footers = $this->Model_admin->get_footer();
 		$this->data['footer_links'] = $all_footers;
-
-		$this->data['selected_menu'] = $this->uri->rsegment(1);
-		
-		$this->set_menu_titles();
-		$this->data['checklogin'] = $this->is_logged();
-
-//                $websites=$this->get_userwebsites();
-//                var_dump($websites);
-//                if( empty($websites) ) $websites[]='Нямате сайтове';
-//                $this->data['websites']=$websites;
 	}
 
 	protected function load_view($view_name = 'main_template_view')

@@ -54,7 +54,7 @@ $db['default']['username'] = 't3stovet_exouser';
 $db['default']['password'] = 'VKDNw{FMd_Q%';
 $db['default']['database'] = 't3stovet_exo';
 
-if($_SERVER['SERVER_NAME'] === 'exo.bg')
+if(preg_match('/exo.bg$/i', $_SERVER['SERVER_NAME'])) // if on real server
 {
 	$db['default']['hostname'] = 'localhost';
 }

@@ -12,6 +12,7 @@ li											{list-style:none}
 #head_cen									{width:980px; margin:0 auto}
 #head_sup									{width:980px; float:left; position:relative}
 h1.logo										{width:980px; float:left; color: #31a1ff; height:50px; margin-top: 50px;}
+#preview_body h1.logo {margin-top: 0px;}
 h1.logo a.site_title, h1.logo a.site_title:visited		{display:inline-block; height:36px; float: left; color: #31a1ff;}
 h1.logo a#site_slogan, h1.logo a#site_slogan:visited	{color: white; font-size: 11pt; float: left; margin-top: 10px;}
 menu									{height:44px; margin-top:8px; float:right}
