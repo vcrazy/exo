@@ -76,7 +76,6 @@ class MY_Controller extends CI_Controller
                         $this->form_validation->set_rules('conf_pass', 'Confirm Password', 'required');
 			if ($this->form_validation->run() != FALSE)
                             {   
-							echo 1;
                                 $email=$_POST['email'];
                                 $password=$_POST['password'];
                                 $arr= array(
@@ -84,9 +83,7 @@ class MY_Controller extends CI_Controller
                                     'password' => $password,
                                     );
                                     $this->load->model("Model_register");
-									echo 2;
                                     $this->Model_register->save_from_panel($arr, TRUE);
-									echo 3;
                             }
                             
                          //  $this->load_view();

@@ -33,13 +33,11 @@
 					</div>
                                     <?php  if (  $checklogin == FALSE  )
                                             {
-                                              echo 'da';
                                                include ('panel_login.php');
                                                include ('panel_register.php');
                                             }
                                            else
                                            {
-                                               echo  'ne';
                                                include('/../user_control/afterlogin.php');
                                            }
                                     ?>     
