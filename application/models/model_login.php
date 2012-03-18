@@ -36,7 +36,7 @@ class Model_login extends CI_Model {
 			
 			//Set session data
 			$this->session->set_userdata($row);
-                        $this->session->set_userdata($row['id']);
+			$this->session->set_userdata(array('id' => $row['id']));
 			
 			//Set logged_in to true
 			$this->session->set_userdata(array('logged_in' => true));			
