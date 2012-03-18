@@ -1,3 +1,4 @@
+
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class MY_Controller extends CI_Controller
@@ -37,7 +38,7 @@ class MY_Controller extends CI_Controller
 
 	public function is_logged()
 	{
-		return (bool)$this->session->userdata('id');
+		return (bool)$this->session->userdata('logged_in');
 	}
 	
 	public function set_menu_titles()

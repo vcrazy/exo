@@ -7,7 +7,7 @@ class Login extends MY_Controller
         //$this->load->helper(array('form', 'url'));
         $this->load->model('Model_login');
         //Trqbva da zaredq argumenti na funkciqta login()
-         $result = $this->Model_login->login( $email=$_POST['email'], $password=$_POST['password'] );
+         $result = $this->Model_login->login($this->input->post('email'), $this->input->post('password'));
         if($result == true)
         {
             redirect('/user_interface/manage');
