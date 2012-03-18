@@ -31,7 +31,8 @@ class Contacts extends MY_Controller
                                 $email=$this->input->post('email');
                                 $message=$this->input->post('message');
 								$phone=$this->input->post('phone');
-                                $arr = array(
+
+								$arr = array(
 								    'name'    => $name,
                                     'email'    => $email, 
                                     'message' => $message,
@@ -40,8 +41,7 @@ class Contacts extends MY_Controller
 
 								$this->load->model("Model_contacts");
                                 $this->Model_contacts->save_contacts($arr);
-								redirect(base_url() . '/contacts/contacts');
-                                
+								redirect(base_url() . 'contacts'); // = http://exo.bg/contacts
                             }
                     }
 					
