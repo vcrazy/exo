@@ -46,7 +46,7 @@ $(document).ready(function(){
             $(this).removeClass().addClass("plan shadow");		
         }); 
 	
-        $("#start_register").hover(function(){
+        $("#reg-img").hover(function(){
             $(this).attr("src","/images/registration_over.png");
             },function() {
             $(this).attr("src","/images/registration.png");

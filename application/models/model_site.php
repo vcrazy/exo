@@ -103,24 +103,27 @@ class Model_site extends CI_Model
 		}
 	}
 
-//        public function get_domain($limit)
-//        {
-//            $this->db->select('site_id,domain,');
-//            $this->db->order_by("site_date","desc");
-//            $this->db->limit($limit);
-//	    $query = $this->db->get('sites');
-//            
-//            if($query->num_rows() > 0)
-//		{
-//                    $arr = array();
-//                    foreach($query->result_array() as $row)
-//			{
-//                            $arr[] = $row;
-//			}
-//                    return $arr;
-//		}
-//                    
-//        }
+        public function get_domain($limit)
+        {
+            $this->db->select('id');
+            $this->db->order_by("site_date");
+            $this->db->get_where('thumbnails');
+            $this->db->select('site_id,domain');
+            $this->db->order_by("site_date","desc");
+            $this->db->limit($limit);
+	    $query = $this->db->get('sites');
+            
+            if($query->num_rows() > 0)
+		{
+                    $arr = array();
+                    foreach($query->result_array() as $row)
+			{
+                            $arr[] = $row;
+			}
+                    return $arr;
+		}
+                    
+        }
 
 	public function read_website_id($domain)
 	{

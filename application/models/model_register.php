@@ -42,6 +42,13 @@ class Model_register extends CI_Model {
         $this->db->insert('sites', $site);
         $site_id = $this->db->insert_id();
         
+        $thumbnails=array(
+            'site_id' => $site_id,
+            'date_added' => $date,
+            'status' => '0'
+                );
+        $this->db->insert('thumbnails',$thumbnails);
+        
         $count = 0;
         foreach ($nextpage as $page1) {
             $count++;

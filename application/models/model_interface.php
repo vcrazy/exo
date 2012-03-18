@@ -34,7 +34,7 @@ class Model_interface extends CI_Model{
                 );
             $this->db->where('id', $user_id);
             $this->db->where('password', md5($old_pass));
-            $query = $this->db->update('users',$data); 
+            $query = $this->db->update('users',$data);
         }
         public function change_user_email($arr)
         {

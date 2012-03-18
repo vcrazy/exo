@@ -28,11 +28,11 @@
         <div id="toppanel">
 			<div id="panel">
 				<div class="content clearfix">
-					<?php include('/panel_start.php'); ?>
+					<?php include('panel_start.php'); ?>
                                     <?php  if (  $checklogin == FALSE  )
                                             {
-                                               include ('/panel_login.php');
-                                               include ('/panel_register.php');
+                                               include ('panel_login.php');
+                                               include ('panel_register.php');
                                             }
                                            else
                                            {
