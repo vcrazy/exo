@@ -8,34 +8,52 @@ class Browshot extends MY_Controller // extends our controller - see it in the '
         {
             $this->data['view'] = 'api_content/content';
             
-            $this->load->helper('string');
             
             $this->load->model('Model_site');
             $websites=$this->Model_site->get_domain('10');
             
             $api = 'nOwotRrCzrBiYOnRCBOVcUqydZsBTdRv';            
             $generatedids = array();
-            $ids = array();
-            $picid = array();
-            foreach ($websites as $key => $value)
+            if (!empty($websites))
+            {
+                foreach ($websites as $key => $value)
+                    {
+                        $page ="http://".$value['domain'].'.exo.bg';
+
+                        $homepage = file_get_contents("http://api.browshot.com/api/v1/screenshot/create?url=".$page."&size=screen&cache=0&key=".$api);//'https://api.browshot.com/api/v1/screenshot/create?url='.$page.'&size=screen&cache=0&key='.$api);
+
+                        $homepage = json_decode($homepage);
+
+                        $generatedids[$value['site_id']] = $homepage->id; 
+                    };
+                if ( !empty($generatedids) )
                 {
-                    $page ="http://".$value['domain'].'.exo.bg';
-                    var_dump($value['domain']);
-                    $homepage = file_get_contents("http://api.browshot.com/api/v1/screenshot/create?url=".$page."&size=screen&cache=0&key=".$api);//'https://api.browshot.com/api/v1/screenshot/create?url='.$page.'&size=screen&cache=0&key='.$api);
-                    $homepage = json_decode($homepage);
-                    $generatedids[] = $homepage->id; 
-                    $ids[]=$value['site_id'];
-                };
-                
-            $this->data['domains'] = $generatedids ;
+                    $this->Model_site->save_generatedids($generatedids);
+                }
+            }
             $this->load_view(); 
 
         }
          public function get_pictures()
          {
-             $pic = file_get_contents("http://www.browshot.com/screenshot/image/".$homepage->id."?scale=1&key=nOwotRrCzrBiYOnRCBOVcUqydZsBTdRv&height=500&width=700&ratio=fit");
-                    
-             $picname = random_string('unique');
-             $mynewpic=file_put_contents($picname."png", $pic);
+             $this->load->helper('string');
+             
+             $this->load->model('Model_site');
+             
+             $ids = $this->Model_site->get_ids();
+             
+             if( !empty($ids) )
+             {
+                 foreach ($ids as $key=>$value)
+                 {
+                     $pic = file_get_contents("http://www.browshot.com/screenshot/image/".$value."?scale=1&key=nOwotRrCzrBiYOnRCBOVcUqydZsBTdRv&height=500&width=700&ratio=fit");       
+                     $picname = random_string('unique');
+                     $picname.=".png";
+                     $mynewpic=file_put_contents($picname, $pic);
+                     
+                     $this->Model_site->save_picture($key,$picname);
+                     $this->Model_site->delete_record_thumb($key);
+                 }
+             }
          }
 }

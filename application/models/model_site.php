@@ -105,12 +105,24 @@ class Model_site extends CI_Model
 
         public function get_domain($limit)
         {
-            $this->db->select('id');
-            $this->db->order_by("site_date");
-            $this->db->get_where('thumbnails');
+            $this->db->select('site_id');
+            $this->db->order_by("date_added");
+            $query = $this->db->get_where('thumbnails',array('status' => '0'), $limit);
+            $arr1 = array();
+            if($query->num_rows() > 0)
+            {
+                foreach($query->result() as $row)
+                    {
+                        $arr1[] = $row->site_id;
+                    }
+            }
+            else
+            {
+                return FALSE;
+            }
             $this->db->select('site_id,domain');
-            $this->db->order_by("site_date","desc");
-            $this->db->limit($limit);
+            $this->db->order_by("site_date");
+            $this->db->where_in('site_id',$arr1);
 	    $query = $this->db->get('sites');
             
             if($query->num_rows() > 0)
@@ -124,7 +136,51 @@ class Model_site extends CI_Model
 		}
                     
         }
+        
+        public function save_generatedids($generatedids)
+        {
+           foreach ($generatedids as $key => $value)
+           {
+              $data = array(
+                'generated_id' => $value,
+                'status' => '1'
+                    );
+              $this->db->where('site_id', $key);
+              $this->db->update('thumbnails', $data); 
 
+           }
+        }
+        
+        public function get_ids()
+        {
+           $this->db->select('site_id,generated_id');
+           $this->db->where('status','1');
+           $query = $this->db->get('thumbnails');
+           
+           $arr=array();
+           
+           if($query->num_rows() > 0)
+            {
+               foreach($query->result() as $row)
+                {
+                    $arr[$row->site_id] = $row->generated_id;
+		} 
+            }
+            return $arr;
+        }
+        
+        public function save_picture($id,$picname)
+        {
+            $data = array(
+              'site_pic' => $picname
+                ); 
+            $this->db->where('site_id', $id);
+            $this->db->update('sites', $data); 
+        }
+        public function delete_record_thumb($id)
+        {
+            $this->db->delete('thumbnails', array('site_id' => $id));
+        }
 	public function read_website_id($domain)
 	{
 		$this->db->where('domain', $domain);
