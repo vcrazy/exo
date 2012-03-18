@@ -55,4 +55,22 @@ class Model_site extends CI_Model
 			return FALSE;
 		}
 	}
+        public function get_domain($limit)
+        {
+            $this->db->select('site_id,domain,');
+            $this->db->order_by("site_date","desc");
+            $this->db->limit($limit);
+	    $query = $this->db->get('sites');
+            
+            if($query->num_rows() > 0)
+		{
+                    $arr = array();
+                    foreach($query->result_array() as $row)
+			{
+                            $arr[] = $row;
+			}
+                    return $arr;
+		}
+                    
+        }
 }

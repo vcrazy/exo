@@ -28,18 +28,14 @@
         <div id="toppanel">
 			<div id="panel">
 				<div class="content clearfix">
-					<div class="left">
-						<h1>Здравей!</h1>
-					</div>
+					<?php include('/panel_start.php'); ?>
                                     <?php  if (  $checklogin == FALSE  )
                                             {
-                                              echo 'da';
-                                               include ('panel_login.php');
-                                               include ('panel_register.php');
+                                               include ('/panel_login.php');
+                                               include ('/panel_register.php');
                                             }
                                            else
                                            {
-                                               echo  'ne';
                                                include('/../user_control/afterlogin.php');
                                            }
                                     ?>     

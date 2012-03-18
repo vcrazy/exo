@@ -51,3 +51,39 @@ ul.navi li.active, ul.navi li.active a:hover {background: #fff; border-bottom: 1
 .contenttab {border: 1px solid #ccc; border-top: none; clear: both; float: left; width: 100%; height:300px; background: #fff;}
 .single_content {padding: 20px; font-size: 1.2em;}
 .single_content h2 {color:#B9B0AC; font-weight: normal; padding-bottom: 10px; font-size: 20px;}
+
+
+.firstp {
+        opacity:0.8;
+        filter:alpha(opacity=80); /* For IE8 and earlier */
+        background: #FFF; 
+        float:left;
+        width:440px;
+        -moz-border-radius: 10px;
+	-khtml-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	margin: 20px 0 20px;
+	padding: 0px 20px;
+}
+.firstp h1{font-size:30px;font-weight: bold;color:#31a1ff; float:left;}
+.firstp p{margin-top: 10px;float:left;}
+
+#first-left{border: dotted 1px #B9B0AC; height: 400px;}
+
+.gallery li {
+        display: inline;
+        list-style: none;
+        width: 100px;
+        height:100px;
+/*        min-height: 175px;*/
+        float: left;
+        margin: 50px 10px 3px 0;
+/*        text-align: center;*/
+	}
+
+
+#first-right{border: dotted 1px #B9B0AC;margin-left:10px;padding:20px; height:200px;}
+#start_register{margin:0 auto;width:200px;float:right;}
+#second-right{border: dotted 1px #B9B0AC;margin-left:10px;padding:20px;}
+#loginprofile{margin-top: 10px;float:left;}

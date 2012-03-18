@@ -46,6 +46,12 @@ $(document).ready(function(){
             $(this).removeClass().addClass("plan shadow");		
         }); 
 	
+        $("#start_register").hover(function(){
+            $(this).attr("src","/images/registration_over.png");
+            },function() {
+            $(this).attr("src","/images/registration.png");
+        });
+        
         // За табовете        
 	$('.single_content').hide();
 	$('.navi li:first').addClass('active');

@@ -29,29 +29,25 @@ class Model_interface extends CI_Model{
            $old_pass = $arr['pass'];
            $new_pass = $arr['n_pass'];
            $user_id = $arr['user'];
-           
-//           $this->db->select('id,password');
-//           $this->db->from('users');
-//           $this->db->where('id', $user_id);
-//           $this->db->where('password', md5($old_pass));
-//           $query = $this->db->get();
-           
-//           if ($query->result())
-//           {
              $data = array(
               'password' => md5($new_pass)
                 );
             $this->db->where('id', $user_id);
             $this->db->where('password', md5($old_pass));
+            $query = $this->db->update('users',$data); 
+        }
+        public function change_user_email($arr)
+        {
+           $old_email = $arr['old_email'];
+           $new_email = $arr['n_email'];
+           $user_id = $arr['user'];
+             $data = array(
+              'email' => $new_email
+                );
+            $this->db->where('id', $user_id);
+            $this->db->where('email', $old_email);
             $query = $this->db->update('users',$data);
-//            if ($query->result())
-//            {
-                echo $query;
-//            }
-//           else
-//           {
-//               echo 'ne';
-//           }    
+            return $query;
         }
 
 }
