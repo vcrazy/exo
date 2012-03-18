@@ -22,8 +22,7 @@ class Register extends MY_Controller // extends our controller - see it in the '
                                         'template' => $template
                                            );
                                 $this->session->set_userdata($arr);
-                                
-                                redirect('/../register/step2');
+                                redirect('/register/step2');
                             }
                     }
                 $this->load_view();

@@ -18,6 +18,7 @@
  * NOTE: If you change these, also change the error_reporting() code below
  *
  */
+//	define('ENVIRONMENT', 'development');
 	define('ENVIRONMENT', $_SERVER['SERVER_NAME'] === 'exo.bg' ? 'production' : 'development');
 /*
  *---------------------------------------------------------------
@@ -199,7 +200,8 @@ if (defined('ENVIRONMENT'))
  * And away we go...
  *
  */
-require_once BASEPATH.'core/CodeIgniter.php';
+
+	require_once BASEPATH.'core/CodeIgniter.php';
 
 /* End of file index.php */
 /* Location: ./index.php */
