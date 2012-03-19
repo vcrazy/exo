@@ -15,7 +15,7 @@
 |
 */
 
-$config['base_url']	= $_SERVER['SERVER_NAME'] === 'exo.bg' ? 'http://exo.bg/' : '';
+$config['base_url']	= mb_substr($_SERVER['SERVER_NAME'], -6, 6, 'utf-8') === 'exo.bg' ? 'http://exo.bg/' : '';
 
 /*
 |--------------------------------------------------------------------------

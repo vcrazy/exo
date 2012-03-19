@@ -1,4 +1,4 @@
-<menu id="menu">
+<menu id="menu" style="margin-top: 0px;">
 		<?php
 			foreach($menus as $menu_id => $menu)
 			{
