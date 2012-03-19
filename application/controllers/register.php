@@ -93,7 +93,7 @@ class Register extends MY_Controller // extends our controller - see it in the '
                         $this->form_validation->set_rules('email', 'Email', 'required|valid_emails|is_unique[users.email]');
                         $this->form_validation->set_rules('password', 'Password', 'required|matches[conf_pass]');
                         $this->form_validation->set_rules('conf_pass', 'Confirm Password', 'required');
-                        $this->form_validation->set_rules('domain', 'Domain', 'required|valid_domains|is_unique[users.domain]');
+                        $this->form_validation->set_rules('domain', 'Domain', 'required|valid_domains|is_unique[sites.domain]');
                         $this->form_validation->set_rules('site_name', 'Site Name', 'required');
                         if ($this->form_validation->run() != FALSE)
                             {   
@@ -112,7 +112,7 @@ class Register extends MY_Controller // extends our controller - see it in the '
                                 $this->load->model("Model_register");
 
                                 $this->Model_register->save_registration(TRUE);
-                                redirect('/../register/step4');
+                                redirect('/../user_interface/manage');
                                 
                             }
                     }

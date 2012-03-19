@@ -2,10 +2,10 @@
 
 class Model_interface extends CI_Model{
 
-	public function add_website()
-	{
+		public function add_website()
+		{
             
-	}
+		}
         
         public function add_page()
         {
@@ -24,6 +24,21 @@ class Model_interface extends CI_Model{
 		}
 	    return $arr;
         }
+		
+		public function show_info($user_id)
+		{
+			$this->db->select('user_id,change_date,description');
+            $this->db->from('changes');
+            $this->db->where('user_id', $user_id); 
+			$query = $this->db->get();
+			
+			$arr = array();
+			foreach ($query->result_array() as $row)
+			{
+				$arr[] = $row;
+			}
+			return $arr;
+		}
 
 }
 

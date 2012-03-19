@@ -19,7 +19,7 @@ class Model_login extends CI_Model {
 		
 		//Check against user table
 		$this->db->where('email', $email);
-                $this->db->where('password',md5($password)); 
+        $this->db->where('password',md5($password)); 
 		$query = $this->db->get_where($this->user_table);
 		
 		if ($query->num_rows() > 0) {
@@ -39,7 +39,8 @@ class Model_login extends CI_Model {
 			
 			//Set logged_in to true
 			$this->session->set_userdata(array('logged_in' => true));			
-			
+			$this->session->set_userdata('id',$row['id']);
+			echo $row['id'].'joyhiyi';
 			//Login was successful			
 			return true;
 		} else {

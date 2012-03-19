@@ -32,12 +32,20 @@ class Model_register extends CI_Model {
         $site = array(
             'site_name' => $site_name, 
             'user_id' => $user_id,
-            'site_url' => $domain.'.exo.bg',
             'template_id' => $template,
             'domain' => $domain
         );
         $this->db->insert('sites', $site);
         $site_id = $this->db->insert_id();
+		
+		$data=date("Y-m-d H:i:s");
+        $change = array(
+                'user_id' => $user_id,
+                'change_date' => $data,
+                'description'=>'Вие създадохте нов сайт'.$site_name.' с домейн '.$domain
+                );
+		$this->db->insert('changes',$change);
+		
         $count = 0;
         foreach ($nextpage as $page1) {
             $count++;

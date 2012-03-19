@@ -55,4 +55,31 @@ class Model_site extends CI_Model
 			return FALSE;
 		}
 	}
+	
+	public function site_info($name, $description)
+	{
+		$data = array(
+			'site_name' => $name,
+			'site_description' => $description
+			);
+		$this->db->where('site_name', $name);
+		$this->db->update('sites', $data);
+	}
+	
+	public function get_domain($website_id)
+	{
+		$this->db->select('domain, site_name, site_description');
+		$this->db->from('sites');
+		$this->db->where('site_id', $website_id); 
+		$arr=array();
+		$query = $this->db->get();
+		
+		foreach ($query->result() as $row)
+		{
+			$arr['domain']=$row->domain;
+			$arr['name']=$row->site_name;
+			$arr['description']=$row->site_description;
+		}
+		return $arr;
+	}
 }

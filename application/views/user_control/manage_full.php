@@ -20,6 +20,14 @@
 	        </div>
 	        <div id="tab_content_2" class="single_content">
 	            <h2>Последни събития</h2>
+				<?php
+                    $i=1;
+                    foreach($last_activity as $arr)
+                        { 
+                            echo '<h2>'.$i.'. <b>'.$arr['change_date'].' '.$arr['description'].'</b></h2>';
+                            $i++;   
+                        }
+                    ?>
 	        </div>
 	        <div id="tab_content_3" class="single_content">
 	            <h2>Профил</h2> <br /> <br />

@@ -4,6 +4,8 @@ class User_interface extends MY_Controller // extends our controller - see it in
 {
    public function manage()
         {
+	   
+			var_dump($this->session->all_userdata());
             $this->data['view'] = 'user_control/manage_full';
             $this->load->model('Model_interface');
             $user_id = $this->session->userdata('id');
@@ -12,6 +14,9 @@ class User_interface extends MY_Controller // extends our controller - see it in
             $this->data['checklogin'] = $checklogin;
             $websites = $this->Model_interface->get_websites($user_id);
             $this->data['websites'] = $websites;
+			$last_activity = $this->Model_interface->show_info($user_id);
+			$this->data['last_activity'] = $last_activity;
+			
             $this->load_view();
             
         }

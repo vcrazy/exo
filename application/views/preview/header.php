@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<title>Eeeeeeeexxoooooooooo :)</title>
+		<title>eXo.bg</title>
 		<link href="/css/styles.css" rel="stylesheet" type="text/css" media="all" />
 		<script type="text/javascript" src="/js/jquery.min.js"></script>
 		<script type="text/javascript" src="/js/preview.js"></script>
@@ -13,10 +13,31 @@
 				<div id="head_sup" class="head_pad">
 					<?php include('menu.php'); ?>
 					<h1 class="logo">
-						<a href="/" class="site_title">EXO.bg</a><br />
-						<a href="/" id="site_slogan">
-							РџСЂРµРґСЃС‚Р°РІРµС‚Рµ Р’Р°С€РёСЏ Р±РёР·РЅРµСЃ РїРѕ Р»РµСЃРµРЅ Рё РµР»РµРіР°РЅС‚РµРЅ РЅР°С‡РёРЅ
+						<a href="/" class="site_title">
+						<?php if ($website != '')
+							{
+							echo $domain;
+							}
+							else
+								{
+								echo 'EXO.bg';
+								}
+						?>
 						</a>
+						<br />
+						<div>
+							<a href="/" id="site_slogan">
+								<?php if ($domain != '')
+									{
+									echo $description;
+									}
+									else
+										{
+										echo 'Представете Вашия бизнес по лесен и елегантен начин';
+										}
+								?>
+							</a>
+						</div>
 					</h1>
 				</div>
 			</div>
