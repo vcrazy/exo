@@ -6,22 +6,23 @@ img											{border:0}
 h1,h2,h3,h4,h5,h6							{font-weight:normal}
 li											{list-style:none}
 
-#head										{width:100%; float:left; background:url(/images/headBg.png) repeat-x}
+#head										{width:100%; float:left; background:url('/images/headBg.png') repeat-x}
 .head_height								{height:478px}
 .head_pad									{padding-bottom:30px}
 #head_cen									{width:980px; margin:0 auto}
 #head_sup									{width:980px; float:left; position:relative}
 h1.logo										{width:980px; float:left; color: #31a1ff; height:50px; margin-top: 50px;}
+#preview_body h1.logo {margin-top: 0px;}
 h1.logo a.site_title, h1.logo a.site_title:visited		{display:inline-block; height:36px; float: left; color: #31a1ff;}
 h1.logo a#site_slogan, h1.logo a#site_slogan:visited	{color: white; font-size: 11pt; float: left; margin-top: 10px;}
 menu									{height:44px; margin-top:8px; float:right}
 menu li								{width:auto; margin-left:1px; float:left; font-family:Arial, Helvetica, sans-serif; font-size:13px; color:#5f5f5f; line-height:35px; text-transform:uppercase}
 menu li:first-child					{margin:0}
-menu li	a, menu li a.active	{width:auto; height:42px; padding:0 23px; float:left; color:inherit; background:#252525}
+menu li	a, menu li a.active	{width:auto; height:42px; padding:0 23px; float:left; background:#252525}
 menu li a.not-active			{width:auto; height:42px; padding:0 23px; float:left; color:#5f5f5f; background:#252525}
 menu li	a:hover, menu li a.active	{color:#31a1ff; background:#272727}
 
-#content									{width:100%; padding-bottom:36px; float:left; background:#ffffff url(/images/contentBg.png) repeat-x}
+#content									{width:100%; padding-bottom:36px; float:left; background:#ffffff url('/images/contentBg.png') repeat-x}
 #content_cen								{width:980px; margin:0 auto}
 #content_sup								{width:980px; float:left; position:relative}
 
@@ -30,7 +31,7 @@ h2											{width:auto; margin-top:9px; float:left; font-family:Arial, Helveti
 h2 span.site_title							{color:#3b3b3b; text-transform:uppercase; margin-right:5px}
 h3											{width:auto; float:left; font-family:Arial, Helvetica, sans-serif; font-size:26px; color:#31a1ff; font-weight:bold; line-height:60px; letter-spacing:-1.7px}
 
-#foot										{width:100%; height:90px; float:left; background:url(/images/footBg.png) repeat-x;}
+#foot										{width:100%; height:90px; float:left; background:url('/images/footBg.png') repeat-x;}
 #foot_cen									{width:980px; margin:18px auto 0 auto}
 #foot ul									{margin:11px auto 0 auto;}
 #foot ul li									{width:auto; float:left; font-family:"Trebuchet MS", Arial, Helvetica, sans-serif; font-size:14px; color:#767676; line-height:18px}
@@ -40,34 +41,6 @@ h3											{width:auto; float:left; font-family:Arial, Helvetica, sans-serif; 
 #foot p	a, #foot p	a:visited				{color:white;}
 
 textarea {width: 350px; height: 120px;}
-
-.changeover {
-    transition: all 5.0s ease-in-out;
-    -webkit-transition: all 0.30s ease-in-out;
-    -moz-transition: all 0.30s ease-in-out;
-    border:#999 1px solid;
-    outline:none;
-    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
-    -webkit-box-shadow: 0 0 5px rgba(81, 203, 238, 1);
-    -moz-box-shadow: 0 0 5px rgba(81, 203, 238, 1);
-}
-
-#plans {float:left;}
-.plan {float:left; width:300px; margin:5px; height:300px; }
-.shadow{
--moz-box-shadow: -5px -5px 5px #888;
--webkit-box-shadow: -5px -5px 5px #888;
-box-shadow: -5px -5px 5px #888;
-}
-#plan_first {}
-#plan_middle {}
-#plan_last {}
-#plan_head{background:url(/images/headBg.png) repeat-x; text-align: center; color:white; font-size:22px; padding:10px 0 10px 0;}
-.plan ul {margin:0 24px 0 8px; list-style:none;}
-.plan li {font-size:11px; color:#808080;}
-.plan li span.tip {display:block; font-size:13px; width:100%; padding:8px; cursor:pointer;}
-
-
 
 .container {width: 100%;}
 ul.navi {float: left; height: 28px; border-bottom: 1px solid #ccc; border-left: 1px solid #ccc; width: 100%;}
@@ -79,3 +52,39 @@ ul.navi li.active, ul.navi li.active a:hover {background: #fff; border-bottom: 1
 .contenttab {border: 1px solid #ccc; border-top: none; clear: both; float: left; width: 100%; height:300px; background: #fff;}
 .single_content {padding: 20px; font-size: 1.2em;}
 .single_content h2 {color:#B9B0AC; font-weight: normal; padding-bottom: 10px; font-size: 20px;}
+
+
+.firstp {
+        opacity:0.8;
+        filter:alpha(opacity=80); /* For IE8 and earlier */
+        background: #FFF; 
+        float:left;
+        width:440px;
+        -moz-border-radius: 10px;
+	-khtml-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	margin: 20px 0 20px;
+	padding: 0px 20px;
+}
+.firstp h1{font-size:30px;font-weight: bold;color:#31a1ff; float:left;}
+.firstp p{margin-top: 10px;float:left;}
+
+#first-left{border: dotted 1px #B9B0AC; height: 400px;}
+
+.gallery li {
+        display: inline;
+        list-style: none;
+        width: 100px;
+        height:100px;
+/*        min-height: 175px;*/
+        float: left;
+        margin: 50px 10px 3px 0;
+/*        text-align: center;*/
+	}
+
+
+#first-right{border: dotted 1px #B9B0AC;margin-left:10px;padding:20px; height:200px;}
+#start_register{margin:0 auto;width:200px;float:right;}
+#second-right{border: dotted 1px #B9B0AC;margin-left:10px;padding:20px;}
+#loginprofile{margin-top: 10px;float:left;}

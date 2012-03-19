@@ -27,6 +27,10 @@ class Helper
             {
 				$out .= $cyr[$l];
 			}
+			else
+			{
+				$out .= $l;
+			}
         }
 
 		return $out;

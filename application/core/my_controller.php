@@ -1,3 +1,4 @@
+
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class MY_Controller extends CI_Controller
@@ -9,8 +10,8 @@ class MY_Controller extends CI_Controller
 		parent::__construct();
 
 		$this->register();
-                $this->get_userwebsites();
-                
+		$this->get_userwebsites();
+
 		$this->data['session'] = $this->session->all_userdata(); // put all the information we have in the session
 
 		$this->data['uri'] = array(
@@ -18,21 +19,16 @@ class MY_Controller extends CI_Controller
 			'method' => $this->router->fetch_method()
 		);
 
+		$this->data['selected_menu'] = $this->uri->rsegment(1);
+
+		$this->set_menu_titles();
+		$this->data['checklogin'] = $this->is_logged();
+
 		$this->load->model('Model_admin');
 		$all_menus = $this->Model_admin->get_menus();
 		$this->data['menus'] = $all_menus; 
 		$all_footers = $this->Model_admin->get_footer();
 		$this->data['footer_links'] = $all_footers;
-
-		$this->data['selected_menu'] = $this->uri->rsegment(1);
-		
-		$this->set_menu_titles();
-                $this->data['checklogin'] = $this->is_logged();
-                
-//                $websites=$this->get_userwebsites();
-//                var_dump($websites);
-//                if( empty($websites) ) $websites[]='Нямате сайтове';
-//                $this->data['websites']=$websites;
 	}
 
 	protected function load_view($view_name = 'main_template_view')
@@ -42,7 +38,7 @@ class MY_Controller extends CI_Controller
 
 	public function is_logged()
 	{
-		return (bool)$this->session->userdata('id');
+		return (bool)$this->session->userdata('logged_in');
 	}
 	
 	public function set_menu_titles()
@@ -74,9 +70,8 @@ class MY_Controller extends CI_Controller
                         $this->form_validation->set_rules('email', 'Email', 'required|valid_emails|is_unique[users.email]');
                         $this->form_validation->set_rules('password', 'Password', 'required|matches[conf_pass]');
                         $this->form_validation->set_rules('conf_pass', 'Confirm Password', 'required');
-						if ($this->form_validation->run() != FALSE)
+			if ($this->form_validation->run() != FALSE)
                             {   
-							echo 1;
                                 $email=$_POST['email'];
                                 $password=$_POST['password'];
                                 $arr= array(
@@ -84,9 +79,7 @@ class MY_Controller extends CI_Controller
                                     'password' => $password,
                                     );
                                     $this->load->model("Model_register");
-									echo 2;
                                     $this->Model_register->save_from_panel($arr, TRUE);
-									echo 3;
                             }
                             
                          //  $this->load_view();

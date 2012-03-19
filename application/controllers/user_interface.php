@@ -4,22 +4,68 @@ class User_interface extends MY_Controller // extends our controller - see it in
 {
    public function manage()
         {
-	   
-			var_dump($this->session->all_userdata());
-            $this->data['view'] = 'user_control/manage_full';
-            $this->load->model('Model_interface');
-            $user_id = $this->session->userdata('id');
 
-            $checklogin = $this->is_logged();
-            $this->data['checklogin'] = $checklogin;
-            $websites = $this->Model_interface->get_websites($user_id);
-            $this->data['websites'] = $websites;
-			$last_activity = $this->Model_interface->show_info($user_id);
-			$this->data['last_activity'] = $last_activity;
-			
-            $this->load_view();
+           if ( $this->session->userdata('id') )
+           {
+                $this->data['view'] = 'user_control/manage_full';
+                $this->load->model('Model_interface');
+                $user_id = $this->session->userdata('id');
+
+                $checklogin = $this->is_logged();
+                $this->data['checklogin'] = $checklogin;
+                $websites = $this->Model_interface->get_websites($user_id);
+                $this->data['websites'] = $websites;
+
+                if( !empty($_POST)  )
+                {  
+                    if( $this->input->post('change_pass') ) 
+                    {
+                       $this->form_validation->set_rules('pass', 'Password', 'required');
+                       $this->form_validation->set_rules('n_pass', 'Password', 'required|matches[r_pass]');
+                       $this->form_validation->set_rules('r_pass', 'Confirm Password', 'required');
+                       if ($this->form_validation->run() != FALSE)
+                         {
+                            $pass = $this->input->post('pass');
+                            $n_password = $this->input->post('n_pass');
+                            $r_password = $this->input->post('r_pass');
+                            $arr= array(
+                                'pass'    => $pass, 
+                                'n_pass' => $n_password,
+                                'user' => $user_id
+                                       );
+                            $this->load->model("Model_interface");
+                            $this->Model_interface->change_user_pass($arr);
+                         }
+                    }
+                    if( $this->input->post('change_email') ) 
+                    { 
+                       $this->form_validation->set_rules('old_email', 'Old Email', 'required');
+                       $this->form_validation->set_rules('n_email', 'New Email', 'required');
+                       if ($this->form_validation->run() != FALSE)
+                         {
+                            $old_email = $this->input->post('old_email');
+                            $n_email = $this->input->post('n_email');
+                            $arr= array(
+                                'old_email'    => $old_email, 
+                                'n_email' => $n_email,
+                                'user' => $user_id
+                                       );
+                            $this->load->model("Model_interface");
+                            $result=$this->Model_interface->change_user_email($arr);
+                            if ( (bool)$result == TRUE)
+                            {
+                                $this->session->unset_userdata('email');
+                                $this->session->set_userdata('email', $n_email);
+                                var_dump($this->session->all_userdata());
+                            }
+                         }
+                    }
+                }
+            }
             
-        }
+            $this->load_view();
+           }
+           
 	public function add_website1()
 	{
 		$this->data['view'] = 'user_interface/user_interfaces_view'; 

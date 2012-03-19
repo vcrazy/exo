@@ -7,7 +7,7 @@
 		<script type="text/javascript" src="/js/jquery.min.js"></script>
 		<script type="text/javascript" src="/js/preview.js"></script>
 	</head>
-	<body>
+	<body id="preview_body">
 		<div id="head">
 			<div id="head_cen">
 				<div id="head_sup" class="head_pad">

@@ -4,16 +4,9 @@ class Preview extends CI_Controller
 {
 	public function index($website_id = NULL)
 	{
-		if(is_null($website_id))
-		{
-			$this->load->helper('url');
-			redirect('/');
-		}
-
-		$website_id = (int)$website_id;
-
 		$this->load->model('Model_site');
 
+<<<<<<< HEAD
 		$this->data['view'] = 'site/preview';
 
 		$this->data['website'] = $this->Model_site->read_website($website_id);
@@ -50,6 +43,9 @@ class Preview extends CI_Controller
 		{
 			$this->data['menus'] = array();
 		}
+=======
+		$this->data = $this->Model_site->preview($website_id);
+>>>>>>> 4d540ad2301835cdfdd3f4b4b57d3fbc098fa571
 
 		$this->load_view();
 	}
