@@ -1,3 +1,4 @@
+
 /*
 Name: Sliding Login Panel with jQuery 1.3.2
 Author: Jeremie Tisseau
@@ -104,8 +105,8 @@ a:hover.close {background: url(/images/panel/bt_close.png) no-repeat left -19px;
 
 /* sliding panel */
 #toppanel {
-    position: absolute;   /*Panel will overlap  content */
-    /*position: relative;*   /*Panel will "push" the content down */
+    /*position: absolute;*/   /*Panel will overlap  content */
+    position: relative;   /*Panel will "push" the content down */
     top: 0;
 	left: 0; /* IE 6,7 fix */
     width: 100%;
