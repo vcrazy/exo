@@ -22,7 +22,7 @@ class Register extends MY_Controller // extends our controller - see it in the '
                                         'template' => $template
                                            );
                                 $this->session->set_userdata($arr);
-                                redirect('/register/step2');
+                                redirect(base_url().'register/step2');
                             }
                     }
                 $this->load_view();
@@ -74,7 +74,7 @@ class Register extends MY_Controller // extends our controller - see it in the '
                     }
                     else
                     {
-                    redirect('/../register/step1');       
+                    redirect(base_url().'/../register/step1');       
                     }
                  }
                  
@@ -111,7 +111,7 @@ class Register extends MY_Controller // extends our controller - see it in the '
                                 $this->load->model("Model_register");
 
                                 $this->Model_register->save_registration(TRUE);
-                                redirect('/../user_interface/manage');
+                                redirect(base_url().'/../user_interface/manage');
                                 
                             }
                     }
@@ -121,7 +121,7 @@ class Register extends MY_Controller // extends our controller - see it in the '
                     }
                     else
                     {
-                        redirect('/../register/step2');
+                        redirect(base_url().'/../register/step2');
                     }
                  }
                                
@@ -142,7 +142,7 @@ class Register extends MY_Controller // extends our controller - see it in the '
                     }
                     else
                     {
-                        redirect('/../register/step3');
+                        redirect(base_url().'/../register/step3');
                     }
                     
                  }

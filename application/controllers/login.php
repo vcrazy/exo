@@ -10,18 +10,18 @@ class Login extends MY_Controller
          $result = $this->Model_login->login($this->input->post('email'), $this->input->post('password'));
         if($result == true)
         {
-            redirect('/user_interface/manage');
+            redirect(base_url().'/user_interface/manage');
         }
         else
             {
-                redirect('/homepage?error=login');
+                redirect(base_url().'/homepage?error=login');
             }
     }
     
     public function logout() 
     {		
           $this->session->sess_destroy();
-		   redirect('/homepage');
+		   redirect(base_url().'/homepage');
     }
 }
 ?>

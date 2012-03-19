@@ -71,7 +71,7 @@ class User_interface extends MY_Controller // extends our controller - see it in
 		$this->data['view'] = 'user_interface/user_interfaces_view'; 
 
                 if ($this->session->userdata('logged_in'))
-                redirect('/login/log');
+                redirect(base_url().'/login/log');
                 
                  if( !empty($_POST)  )
                     {
@@ -102,7 +102,7 @@ class User_interface extends MY_Controller // extends our controller - see it in
 		$this->data['view'] = 'user_interface/user_interfaces_view'; 
 
                 if ($this->session->userdata('logged_in'))
-                redirect('/login/log');
+                redirect(base_url().'/login/log');
                 
                  if( !empty($_POST)  )
                     {
@@ -143,7 +143,7 @@ class User_interface extends MY_Controller // extends our controller - see it in
                 $this->data['view'] = 'user_interface/user_interfacep_view'; 
 
                 if ($this->session->userdata('logged_in'))
-                redirect('/login/log');
+                redirect(base_url().'/login/log');
                 
                 if( !empty($_POST)  )
                     {

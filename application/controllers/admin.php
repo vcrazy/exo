@@ -30,7 +30,7 @@ class Admin extends MY_Controller // extends our controller - see it in the 'cor
 		$number = $this->uri->segment(3);
 		$this->Model_admin->delete_menu($number);
 		$this->load->helper('url');
-		redirect('/admin/create_menu');
+		redirect(base_url().'/admin/create_menu');
 	}
 	
 	public function create_footer()
