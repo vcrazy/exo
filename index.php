@@ -19,7 +19,7 @@
  *
  */
 //	define('ENVIRONMENT', 'development');
-	define('ENVIRONMENT', $_SERVER['SERVER_NAME'] === 'exo.bg' ? 'production' : 'development');
+	define('ENVIRONMENT', mb_substr($_SERVER['SERVER_NAME'], -6, 6, 'utf-8') === 'exo.bg' ? 'production' : 'development');
 /*
  *---------------------------------------------------------------
  * ERROR REPORTING
